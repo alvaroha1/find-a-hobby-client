@@ -1,7 +1,7 @@
 import getUniqRandomIntArr from './getUniqRandomIntArr';
 // export const URL = 'https://find-a-hobby-server.herokuapp.com'
 // export const URL = 'http://192.168.1.187:3000'
-export const URL = 'http://localhost:3000'
+export const URL = 'http://localhost:3001';
 
 let token = localStorage.getItem('token');
 
@@ -58,7 +58,8 @@ const likeHobbie = (hobbyId) => {
     method: 'PUT',
     body: hobbyId,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     }
   });
 }
@@ -69,7 +70,8 @@ const dislikeHobbie = (hobbyId) => {
     method: 'PUT',
     body: hobbyId,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     }
   });
 }
@@ -80,7 +82,8 @@ const postHobby = (hobby) => {
     method: 'POST',
     body: hobby,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     }
   });
 }

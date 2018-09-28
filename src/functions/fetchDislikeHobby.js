@@ -6,7 +6,8 @@ const fetchDislikeHobby = (hobbyId) => {
     method: 'PUT',
     body: hobbyId,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     }
   });
 }
