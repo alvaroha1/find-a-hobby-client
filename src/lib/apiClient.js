@@ -76,6 +76,7 @@ const dislikeHobbie = (hobbyId) => {
 
 const postHobby = (hobby) => {
   hobby = JSON.stringify(hobby)
+  console.log(hobby)
   return apiFetch(`/hobbies`, {
     method: 'POST',
     body: hobby,

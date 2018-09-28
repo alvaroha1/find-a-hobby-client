@@ -1,53 +1,99 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster');
-
-.Logo-wrapper {
-  width: stretch;
-  height: stretch;
-}
-
-.LogoWrapper-colorHolder {
-  width: stretch;
-  height: stretch;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.LogoWrapper-colorBar {
-  height: stretch;
-}
-.Logo-wrapper.color1 {
-  background-color: var(--p1-color1)
-}
-.Logo-wrapper.color2 {
-  background-color: var(--p1-color2)
-}
-.Logo-wrapper.color3 {
-  background-color: var(--p1-color3)
-}
-
-
-.Logo {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+.App__logo {
   display: flex;
   flex-direction: column;
+  padding: 0;
+  height: 100vh;
+}
+.App__logo__profile {
+  margin: 10vw 5vw 10vw 5vw;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  height: fit-content;
+}
+.App__logo__profile__picture {
+  height: 20vw;
+  width: 20vw;
+  margin-right: 5vw;
+}
+
+.App__logo__profile__picture img {
+  width: 100%;
+  border-radius: 12.5vw;
+}
+
+.App__logo__profile__userinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: stretch;
   justify-content: center;
 }
-
-.Logo h1 {
-  font-family: 'Lobster', cursive;
-  font-size: 12vmax;
-  color: white;
+.App__logo__profile__userinfo__name {
+  font-size: 1.2em;
+  text-align: left;
+  color: #9B9B9B;
+  font-weight: bolder;
 }
 
-/* Reset of conflicting classes with the i*/
-.Logo i {
-  font-size: 10vmax;
-  margin: 40px;
-  overflow:unset;
-  vertical-align: unset;
-  background-color: inherit;
-  box-shadow: none;
-  width: inherit;
-  height: inherit;
+.App__logo__profile__userinfo__hobbies {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  font-size: 0.8em;
+  color: #EE566D;
 }
+.App__logo__profile__userinfo__city {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  font-size: 0.8em;
+  color: #EE566D;
+}
+.App__logo__line {
+  width: 100vw;
+  border-bottom: solid 1px #EE566D;
+}
+
+.App__logo__menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.App__logo__menu li {
+  height: 10vh;
+  color: #9B9B9B;
+  vertical-align: middle;
+  line-height: 10vh;
+  font-weight: bold;
+}
+
+.App__logo__menu--icon {
+  height: 50%;
+  top: 0.55em;
+  position: relative;
+  margin-right: 5vw;
+  margin-left: 30vw;
+}
+
+.App__logo__logout {
+  text-align: left;
+  padding-left: 5vw;
+  height: 10vh;
+  color: #EE566D;
+  font-weight: bold;
+}
+.App__logo__logout .App__logo__logout--icon {
+  height: 60%;
+  top: 0.5em;
+  position: relative;
+  margin-right: 5vw;
+  margin-left: 1vw;
+  transform: rotate(180deg);
+}
+
+/*# sourceMappingURL=logo.css.map */
