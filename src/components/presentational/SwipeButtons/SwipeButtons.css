@@ -1,103 +1,29 @@
-@import url(https://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
-@import url(https://use.fontawesome.com/releases/v5.0.13/css/all.css);
-
-.box{
-  width: 12vh;
-  height: 12vh;
-  /* font-size: 13px; */
-  /* display: block; */
-  border-radius: 100%;
-  position: fixed;
-  -webkit-box-shadow: 0px 14px 23px 2px rgba(0,0,0,0.08);
-  -moz-box-shadow: 0px 14px 23px 2px rgba(0,0,0,0.08);
-  box-shadow: 0px 14px 23px 2px rgba(0,0,0,0.08);
-}
-
-.like {
-  background: #F90005;
-  right: 10%;
-  margin: 0;
-  bottom: 1%;
-  position: fixed;
-}
-
-.dislike {
-  left: 10%;
-  margin: 0;
-  bottom: 1%;
-  position: fixed;
-}
-
-a.box {
-  text-decoration: none;
-  -webkit-transition: -webkit-transform 0.1s;
-  /* overflow: hidden; */
+.App__swipebuttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  height: 100px;
+  position: absolute;
+  width: 100vw;
+  top: 90vh;
 }
 
-a.box:hover{
-	-webkit-transform: scale(1.05);
+.App__swipebuttons__like {
+  width: 20vw;
 }
 
-a.box:active{
-	-webkit-transform: scale(1);
+.App__swipebuttons__dislike {
+  width: 20vw;
 }
 
-/* This is affecting other icons, TODO: scope it */
-i {
-  font-size: 60px;
-  text-align: center;
-  display: block;
-  margin-top: 10px;
-  color:#fff;
-  font-family: "Open Sans", arial;
-  font-weight:300;
-  -webkit-font-smoothing:antialiased;
-  -moz-font-smoothing:antialiased;
-  -ms-font-smoothing:antialiased;
-  -o-font-smoothing:antialiased;
-  font-smoothing:antialiased;
+.App__swipebuttons__like--icon {
+  margin: auto auto;
+  height: 10vw;
 }
 
-.SwipeButtons i {
-  font-size: 7vh;
+.App__swipebuttons__dislike--icon {
+  margin: auto auto;
+  height: 10vw;
 }
 
-i.fas.fa-times {
-  margin: 0;
-}
-
-.like {
-  background: white;
-}
-
-.like i {
-  color: #F90005;
-}
-
-.dislike {
-  background: white;
-}
-
-.dislike i {
-  color: var(--p1-color2);
-}
-
-@media only screen and (min-width:1025px) {
-  .like {
-    right: 30%;
-    margin: 0;
-    bottom: 1%;
-    position: fixed;
-  }
-
-  .dislike {
-    left: 30%;
-    margin: 0;
-    bottom: 1%;
-    position: fixed;
-  }
-}
+/*# sourceMappingURL=swipebuttons.css.map */

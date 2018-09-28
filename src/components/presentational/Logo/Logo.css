@@ -72,6 +72,14 @@
   font-weight: bold;
 }
 
+.App__logo__menu li:hover {
+  height: 10vh;
+  color: #9B9B9B;
+  vertical-align: middle;
+  line-height: 10vh;
+  font-weight: bold;
+}
+
 .App__logo__menu--icon {
   height: 50%;
   top: 0.55em;
@@ -83,6 +91,7 @@
 .App__logo__logout {
   text-align: left;
   padding-left: 5vw;
+  margin-bottom: 5vw;
   height: 10vh;
   color: #EE566D;
   font-weight: bold;

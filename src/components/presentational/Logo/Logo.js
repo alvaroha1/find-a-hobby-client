@@ -21,12 +21,30 @@ export default class Logo extends React.Component {
         </div>
         <div className="App__logo__line"></div>
         <ul className="App__logo__menu">
-          <li className="App__logo__menu__discover"><img className="App__logo__menu--icon" src={compass}></img>Discover</li>
-          <li className="App__logo__menu__favorites"><img className="App__logo__menu--icon" src={heart}></img>Favorites</li>
-          <li className="App__logo__menu__postHobby"><img className="App__logo__menu--icon" src={post}></img>Post a hobby</li>
-          <li className="App__logo__menu__search"><img className="App__logo__menu--icon" src={search}></img>Search</li>
+          <li className="App__logo__menu__discover"
+            onClick={this.props.handleClick}>
+            <img className="App__logo__menu--icon" src={compass}></img>
+            Discover
+          </li>
+          <li className="App__logo__menu__favorites">
+            <img className="App__logo__menu--icon" src={heart}></img>
+            Favorites
+          </li>
+          <li className="App__logo__menu__postHobby">
+            <img className="App__logo__menu--icon" src={post}>
+            </img>
+            Post a hobby
+          </li>
+          <li className="App__logo__menu__search">
+            <img className="App__logo__menu--icon" src={search}>
+            </img>
+            Search
+          </li>
         </ul>
-        <div className="App__logo__logout"><img className="App__logo__logout--icon" src={logout}></img>Logout</div>
+        <div className="App__logo__logout">
+          <img className="App__logo__logout--icon" src={logout}></img>
+          Logout
+        </div>
       </div>
     )
   }
