@@ -19,7 +19,7 @@ export default class Navbar extends Component {
           <img className="App__navbar__tomenu__icon" src={menu} alt="Menu"/>
           </Link>
         </Button>
-        <h1 className="App__navbar__currentview">Discover</h1>
+        <h1 className="App__navbar__currentview">{this.props.title}</h1>
       </div>
     )
   }

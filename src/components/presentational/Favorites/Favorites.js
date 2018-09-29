@@ -8,7 +8,7 @@ export default class Favorites extends Component {
   render() {
     return (
       <div className="App__favorites">
-        <Navbar></Navbar>
+        <Navbar title="Favorites"></Navbar>
         <div className="App__favorites__list">
           <HobbyMiniCard></HobbyMiniCard>
           <HobbyMiniCard></HobbyMiniCard>

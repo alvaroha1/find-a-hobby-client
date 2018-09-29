@@ -20,8 +20,8 @@
 
 .App__navbar__currentview {
   font-size: 1.2em;
-  padding-left: 22vw;
-  text-align: left;
+  padding-right: 17vw;
+  text-align: center;
   line-height: 7vh;
   color: #9B9B9B;
 }

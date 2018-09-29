@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Logo from './components/presentational/Logo'
 import HobbyCard from './components/presentational/HobbyCard'
-import Search from './components/presentational/Favorites'
+import Search from './components/presentational/Search'
 import CreateAHobby from './components/presentational/CreateHobby'
 import Favorites from './components/presentational/Favorites'
 

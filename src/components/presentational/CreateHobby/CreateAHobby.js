@@ -7,7 +7,7 @@ export default class CreateAHobby extends React.Component {
   render() {
     return (
       <div className="App__createahobby">
-        <Navbar></Navbar>
+        <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
           <input className="App__createahobby__form__title" type="text" name="hobby" placeholder="Title" />
           <input className="App__createahobby__form__description" type="text" name="description" placeholder="Description" />
