@@ -49,8 +49,10 @@ export default class Logo extends React.Component {
           </li>
         </ul>
         <div className="App__logo__logout">
+        <Link to='/signout'>
           <img className="App__logo__logout--icon" src={logout} alt="logout"></img>
           Logout
+          </Link>
         </div>
       </div>
 

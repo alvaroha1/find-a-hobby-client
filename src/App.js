@@ -5,6 +5,10 @@ import HobbyCard from './components/presentational/HobbyCard'
 import Search from './components/presentational/Favorites'
 import CreateAHobby from './components/presentational/CreateHobby'
 import Favorites from './components/presentational/Favorites'
+import Auth from './components/presentational/Auth'
+import SignUp from './components/presentational/Auth/SignUp/SignUp'
+import SignIn from './components/presentational/Auth/SignIn/SignIn'
+
 
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -121,6 +125,11 @@ class App extends Component {
         <Route path="/create" exact component={CreateAHobby} />
         <Route path="/favorites" exact component={Favorites} />
         <Route path="/" exact component={Logo} />
+        <Route path="/auth" exact component={Auth} />
+        <Route path="/signup" exact component={SignUp} />
+        <Route path="/signin" exact component={SignIn} />
+        <Route path="/signout" exact component={Auth} />
+
         <Logo></Logo>
 
       </div>
