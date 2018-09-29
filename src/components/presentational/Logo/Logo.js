@@ -27,23 +27,23 @@ export default class Logo extends React.Component {
 
           <li className="App__logo__menu__discover">
             <Link to='/discover'>
-              <img className="App__logo__menu--icon" src={compass}></img>
+              <img className="App__logo__menu--icon" src={compass} alt="compass"></img>
             Discover</Link>
           </li>
           <li className="App__logo__menu__favorites">
             <Link to='/favorites'>
-              <img className="App__logo__menu--icon" src={heart}></img>
+              <img className="App__logo__menu--icon" src={heart} alt="heart"></img>
             Favorites</Link>
           </li>
           <li className="App__logo__menu__postHobby">
             <Link to='/create'>
-              <img className="App__logo__menu--icon" src={post}>
+              <img className="App__logo__menu--icon" src={post} alt="pencil">
               </img>
             Post a hobby</Link>
           </li>
           <li className="App__logo__menu__search">
             <Link to='/search'>
-              <img className="App__logo__menu--icon" src={search}>
+              <img className="App__logo__menu--icon" src={search} alt="search">
               </img>
             Search</Link>
           </li>

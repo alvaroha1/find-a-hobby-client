@@ -7,7 +7,7 @@ import CreateAHobby from './components/presentational/CreateHobby'
 import Favorites from './components/presentational/Favorites'
 
 
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   constructor (props) {
@@ -120,9 +120,7 @@ class App extends Component {
         <Route path="/search" exact component={Search} />
         <Route path="/create" exact component={CreateAHobby} />
         <Route path="/favorites" exact component={Favorites} />
-        <Route path="/" exact component={Logo} />
-        <Logo></Logo>
-
+        <Route exact path="/" component={Logo} />
       </div>
     );
   }
