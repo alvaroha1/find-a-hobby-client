@@ -120,6 +120,7 @@ class App extends Component {
         <Route path="/search" exact component={Search} />
         <Route path="/create" exact component={CreateAHobby} />
         <Route path="/favorites" exact component={Favorites} />
+        <Route path="/" exact component={Logo} />
         <Logo></Logo>
 
       </div>
