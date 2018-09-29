@@ -129,9 +129,6 @@ class App extends Component {
         <Route path="/signup" exact component={SignUp} />
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signout" exact component={Auth} />
-
-        <Logo></Logo>
-
       </div>
     );
   }
