@@ -1,17 +1,17 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
-import SwipeButtons from '../SwipeButtons/SwipeButtons'
-import './hobbycard.css'
+import SwipeButtons from '../SwipeButtons/SwipeButtons';
+import './hobbycard.css';
 
 
 export default class HobbyCard extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       money: this.props.hobby.tags[0].average,
       fit: this.props.hobby.tags[1].average,
       creative: this.props.hobby.tags[2].average
-    }
+    };
   }
 
   render () {
@@ -23,10 +23,13 @@ export default class HobbyCard extends React.Component {
           <div className="App__hobbycard__categories__exercise">MONEY</div>
           <div className="App__hobbycard__categories__creativity">CREATIVITY</div>
         </div>
+        <div className="App__hobbycard__imagecanvas">
+          <img className="App__hobbycard__imagecanvas__picture"></img>
+        </div>
         <div className="App_hobycard__card"></div>
         <SwipeButtons></SwipeButtons>
       </div>
-    )
+    );
   }
 }
 

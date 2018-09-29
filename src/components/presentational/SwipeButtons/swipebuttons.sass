@@ -5,7 +5,7 @@
   display: flex
   flex-direction: row-reverse
   justify-content: space-around
-  height: 100px
+  height: 10vh
   position: absolute
   width: 100vw
   top: 90vh
@@ -24,3 +24,24 @@
 .App__swipebuttons__dislike--icon
   margin: auto auto
   height: 10vw
+
+.App__swipebuttons__stats
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  justify-content: space-between
+  width: 15vw
+
+.App__swipebuttons__stats__exercise
+  width: 4vw
+  height: 100px
+  background-color: #EE566D
+  border-radius: 2vw 2vw 0 0
+
+.App__swipebuttons__stats__money
+  @extend .App__swipebuttons__stats__exercise
+  height: 50px
+
+.App__swipebuttons__stats__creativity
+  @extend .App__swipebuttons__stats__exercise
+  height: 80px
