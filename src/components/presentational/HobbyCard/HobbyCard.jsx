@@ -18,11 +18,6 @@ export default class HobbyCard extends React.Component {
     return (
       <div className="App__hobbycard">
         <Navbar></Navbar>
-        <div className="App__hobbycard__categories">
-          <div className="App__hobbycard__categories__money">EXERCISE</div>
-          <div className="App__hobbycard__categories__exercise">MONEY</div>
-          <div className="App__hobbycard__categories__creativity">CREATIVITY</div>
-        </div>
         <div className="App__hobbycard__imagecanvas">
           <img className="App__hobbycard__imagecanvas__picture" alt="Hobby"></img>
         </div>
