@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './logo.css'
 const profile_picture = require('../../../assets/profile_picture.png')
 const compass = require('../../../assets/compass.svg')
@@ -7,12 +8,13 @@ const post = require('../../../assets/post.svg')
 const search = require('../../../assets/search.svg')
 const logout = require('../../../assets/logout.svg')
 
+
 export default class Logo extends React.Component {
   render () {
     return (
       <div className="App__logo">
         <div className="App__logo__profile">
-          <div className="App__logo__profile__picture"><img src={profile_picture} /></div>
+          <div className="App__logo__profile__picture"><img src={profile_picture} alt="Profile"/></div>
           <div className="App__logo__profile__userinfo">
             <div className="App__logo__profile__userinfo__name">Welcome, Joseph</div>
             <div className="App__logo__profile__userinfo__hobbies">2 Hobbies</div>
@@ -21,28 +23,29 @@ export default class Logo extends React.Component {
         </div>
         <div className="App__logo__line"></div>
         <ul className="App__logo__menu">
-          <li className="App__logo__menu__discover"
-            onClick={this.props.handleClick}>
-            <img className="App__logo__menu--icon" src={compass}></img>
-            Discover
+          <li className="App__logo__menu__discover">
+            <Link to="/discover">
+              <img className="App__logo__menu--icon" src={compass} alt="Compass"></img>
+              Discover
+            </Link>
           </li>
           <li className="App__logo__menu__favorites">
-            <img className="App__logo__menu--icon" src={heart}></img>
+            <img className="App__logo__menu--icon" src={heart} alt="Heart"></img>
             Favorites
           </li>
           <li className="App__logo__menu__postHobby">
-            <img className="App__logo__menu--icon" src={post}>
+            <img className="App__logo__menu--icon" src={post} alt="Pencil">
             </img>
             Post a hobby
           </li>
           <li className="App__logo__menu__search">
-            <img className="App__logo__menu--icon" src={search}>
+            <img className="App__logo__menu--icon" src={search} alt="Zoom">
             </img>
             Search
           </li>
         </ul>
         <div className="App__logo__logout">
-          <img className="App__logo__logout--icon" src={logout}></img>
+          <img className="App__logo__logout--icon" src={logout} alt="logout"></img>
           Logout
         </div>
       </div>

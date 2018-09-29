@@ -1,16 +1,30 @@
+* {
+  padding: 0;
+}
+
+*:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+*:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 .App__logo {
   display: flex;
   flex-direction: column;
-  padding: 0;
   height: 100vh;
 }
+
 .App__logo__profile {
   margin: 10vw 5vw 10vw 5vw;
   display: flex;
   flex-direction: row;
-  padding: 0;
   height: fit-content;
 }
+
 .App__logo__profile__picture {
   height: 20vw;
   width: 20vw;
@@ -25,10 +39,10 @@
 .App__logo__profile__userinfo {
   display: flex;
   flex-direction: column;
-  padding: 0;
   width: stretch;
   justify-content: center;
 }
+
 .App__logo__profile__userinfo__name {
   font-size: 1.2em;
   text-align: left;
@@ -39,17 +53,17 @@
 .App__logo__profile__userinfo__hobbies {
   display: flex;
   flex-direction: row;
-  padding: 0;
   font-size: 0.8em;
   color: #EE566D;
 }
+
 .App__logo__profile__userinfo__city {
   display: flex;
   flex-direction: row;
-  padding: 0;
   font-size: 0.8em;
   color: #EE566D;
 }
+
 .App__logo__line {
   width: 100vw;
   border-bottom: solid 1px #EE566D;
@@ -58,12 +72,12 @@
 .App__logo__menu {
   display: flex;
   flex-direction: column;
-  padding: 0;
   list-style: none;
   height: 100%;
   justify-content: space-evenly;
   align-items: flex-start;
 }
+
 .App__logo__menu li {
   height: 10vh;
   color: #9B9B9B;

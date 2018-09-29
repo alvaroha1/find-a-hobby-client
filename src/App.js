@@ -1,66 +1,63 @@
 import React, { Component } from 'react';
-import { Page, Splitter, SplitterSide, SplitterContent} from 'react-onsenui';
 import './App.css';
-import Discover from './components/functional/Discover'
-import List from './components/functional/List'
-import PostHobby from './components/functional/PostHobby'
 import Logo from './components/presentational/Logo'
-import Presentation from './components/presentational/Presentation'
-import BigScreenMenu from './components/presentational/BigScreenMenu'
+import HobbyCard from './components/presentational/HobbyCard'
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor (props) {
     super (props);
     this.state = {
-      likedHobbies: [],
-      dislikedHobbies: [],
-      seenHobbies: [],
-      currentView: 'Logo',
-      newUser: true,
+      // likedHobbies: [],
+      // dislikedHobbies: [],
+      // seenHobbies: [],
+      // currentView: 'Logo',
+      // newUser: true,
     }
   }
 
   componentDidMount(){
-    this.watchForNewUser();
+    // this.watchForNewUser();
   }
 
-  setHobbyAsSeen = (hobby) => {
-    this.setState({seenHobbies: [...this.state.seenHobbies, hobby]})
-  }
+  // setHobbyAsSeen = (hobby) => {
+  //   this.setState({seenHobbies: [...this.state.seenHobbies, hobby]})
+  // }
 
-  passLikedHobby = (hobby) => {
-    this.setState({likedHobbies: [...this.state.likedHobbies, hobby]})
-    this.setHobbyAsSeen(hobby);
-  }
+  // passLikedHobby = (hobby) => {
+  //   this.setState({likedHobbies: [...this.state.likedHobbies, hobby]})
+  //   this.setHobbyAsSeen(hobby);
+  // }
+  //
+  // passDislikedHobby = (hobby) => {
+  //   this.setState({dislikedHobbies: [...this.state.dislikedHobbies, hobby]})
+  //   this.setHobbyAsSeen(hobby);
+  // }
+  //
+  // changeView = (currentView) => {
+  //   this.setState({currentView})
+  // }
 
-  passDislikedHobby = (hobby) => {
-    this.setState({dislikedHobbies: [...this.state.dislikedHobbies, hobby]})
-    this.setHobbyAsSeen(hobby);
-  }
-
-  changeView = (currentView) => {
-    this.setState({currentView})
-  }
-
-  watchForNewUser = () => {
-    const token = window.localStorage.token;
-    if (token) this.setState({
-      newUser: false
-    });
-  }
-
-  changeViewAfterLogo = () => {
-    this.state.newUser
-    ? this.setState({currentView: 'Presentation'})
-    : this.setState({currentView: 'Discover'})
-  }
-
-  renderBigScreenMenu = () => {
-    const { currentView } = this.state
-    return window.innerWidth >= 1025 && currentView !== 'Logo' && currentView !== 'Presentation'
-    ? < BigScreenMenu changeView = {this.changeView}/>
-    : null
-  }
+  // watchForNewUser = () => {
+  //   const token = window.localStorage.token;
+  //   if (token) this.setState({
+  //     newUser: false
+  //   });
+  // }
+  //
+  // changeViewAfterLogo = () => {
+  //   this.state.newUser
+  //   ? this.setState({currentView: 'Presentation'})
+  //   : this.setState({currentView: 'Discover'})
+  // }
+  //
+  // renderBigScreenMenu = () => {
+  //   const { currentView } = this.state
+  //   return window.innerWidth >= 1025 && currentView !== 'Logo' && currentView !== 'Presentation'
+  //   ? < BigScreenMenu changeView = {this.changeView}/>
+  //   : null
+  // }
 
   // renderSideMenu = () => {
   //   return window.innerWidth < 1025 ?
@@ -90,36 +87,46 @@ class App extends Component {
   // }
 
   render() {
-    let view;
-    switch (this.state.currentView) {
-      case 'Logo':
-      view = <Logo handleClick={this.changeViewAfterLogo} />
-      break;
-      case 'Presentation':
-        view = <Presentation handleClick={() => this.changeView('Discover')}/>
-        break;
-      case 'Discover':
-        view = <Discover passLikedHobby={this.passLikedHobby}
-          passDislikedHobby={this.passDislikedHobby}
-          seenHobbies={this.state.seenHobbies}/>
-        break;
-      case 'List':
-        view = <List hobbies={this.state.likedHobbies}/>
-        break;
-      case 'PostHobby':
-        view = <PostHobby />
-        break;
-      default:
-      view = <h1>Oops something went wrong!</h1>
-    }
-
     return (
-      <div className="App">
-          {view}
-            {this.renderBigScreenMenu()}
-      </div>
+      <Router>
+        <div className="App">
+          <Route path="/" exact component={Logo}/>
+          <Route path="/discover" exact component={HobbyCard}/>
+          <Logo></Logo>
+        </div>
+      </Router>
     );
   }
 }
 
 export default App;
+
+
+// let view;
+// switch (this.state.currentView) {
+//   case 'Logo':
+//   view = <Logo handleClick={this.changeViewAfterLogo} />
+//   break;
+//   case 'Presentation':
+//     view = <Presentation handleClick={() => this.changeView('Discover')}/>
+//     break;
+//   case 'Discover':
+//     view = <Discover passLikedHobby={this.passLikedHobby}
+//       passDislikedHobby={this.passDislikedHobby}
+//       seenHobbies={this.state.seenHobbies}/>
+//     break;
+//   case 'List':
+//     view = <List hobbies={this.state.likedHobbies}/>
+//     break;
+//   case 'PostHobby':
+//     view = <PostHobby />
+//     break;
+//   default:
+//   view = <h1>Oops something went wrong!</h1>
+// }
+
+
+// <div className="App">
+//     {view}
+//       {this.renderBigScreenMenu()}
+// </div>

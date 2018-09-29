@@ -8,9 +8,9 @@ export default class HobbyCard extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      money: this.props.hobby.tags[0].average,
-      fit: this.props.hobby.tags[1].average,
-      creative: this.props.hobby.tags[2].average
+      // money: this.props.hobby.tags[0].average,
+      // fit: this.props.hobby.tags[1].average,
+      // creative: this.props.hobby.tags[2].average
     };
   }
 
@@ -24,7 +24,7 @@ export default class HobbyCard extends React.Component {
           <div className="App__hobbycard__categories__creativity">CREATIVITY</div>
         </div>
         <div className="App__hobbycard__imagecanvas">
-          <img className="App__hobbycard__imagecanvas__picture"></img>
+          <img className="App__hobbycard__imagecanvas__picture" alt="Hobby"></img>
         </div>
         <div className="App_hobycard__card"></div>
         <SwipeButtons></SwipeButtons>

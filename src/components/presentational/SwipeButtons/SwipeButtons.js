@@ -9,7 +9,7 @@ class SwipeButtons extends Component {
     return (
       <div className="App__swipebuttons">
         <div onClick={this.props.onLike} className='App__swipebuttons__like'>
-          <img className='App__swipebuttons__like--icon' src={heart_filled}></img>
+          <img className='App__swipebuttons__like--icon' src={heart_filled} alt="Like"></img>
         </div>
         <div className="App__swipebuttons__stats">
           <div className="App__swipebuttons__stats__exercise"></div>
@@ -17,7 +17,7 @@ class SwipeButtons extends Component {
           <div className="App__swipebuttons__stats__creativity"></div>
         </div>
         <div onClick={this.props.onDislike} className='App__swipebuttons__dislike'>
-          <img className='App__swipebuttons__dislike--icon' src={cross}></img>
+          <img className='App__swipebuttons__dislike--icon' src={cross} alt="Dislike"></img>
         </div>
       </div>
     );
