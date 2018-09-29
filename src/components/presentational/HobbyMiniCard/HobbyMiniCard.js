@@ -1,32 +1,45 @@
 import React, { Component } from 'react';
 import './HobbyMiniCard.css'
+const heart_filled = require('../../../assets/heart-filled.svg');
+
 
 export default class HobbyMiniCard extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      money: this.props.hobby.tags[0].average,
-      fit: this.props.hobby.tags[1].average,
-      creative: this.props.hobby.tags[2].average
+      // money: this.props.hobby.tags[0].average,
+      // fit: this.props.hobby.tags[1].average,
+      // creative: this.props.hobby.tags[2].average
     }
   }
 
   render() {
     return (
-      <a href={this.props.hobby.links[0].getStarted} target="_blank" >
-        <div className="HobbyMiniCard">
-          < div className = "HobbyMiniCard__colorHolder"
-            style={{'gridTemplateColumns': `${this.state.money}%
-          ${this.state.fit}% ${this.state.creative}%`}}>
-            <div className='color1 colorBar'></div>
-            <div className='color2 colorBar'></div>
-            <div className='color3 colorBar'></div>
+      <div className="App__hobbyminicard">
+        <div className="App__hobbyminicard__image"></div>
+        <div className="App__hobbyminicard__display">
+          <div className="App__hobbyminicard__display__info">
+            <div className="App__hobbyminicard__display__info__hobby">Hobby Title</div>
+            <div className="App__hobbyminicard__display__info__description">Hobby Description</div>
           </div>
-          <img src={this.props.hobby.pictures[0].big}
-            alt={this.props.hobby.name}/>
-          <h3>{this.props.hobby.name}</h3>
+          <div className="App__hobbyminicard__display__stats">
+            <div className="App__hobbyminicard__display__stats__letters">
+              <div className="App__hobbyminicard__display__stats__letters__e">e</div>
+              <div className="App__hobbyminicard__display__stats__letters__m">m</div>
+              <div className="App__hobbyminicard__display__stats__letters__c">c</div>
+            </div>
+            <div className="App__hobbyminicard__display__stats__bars">
+              <div className="App__hobbyminicard__display__stats__bars__exercise"></div>
+              <div className="App__hobbyminicard__display__stats__bars__money"></div>
+              <div className="App__hobbyminicard__display__stats__bars__creativity"></div>
+            </div>
+          </div>
+          <div className="App__hobbyminicard__display__unfav">
+            <img className="App__hobbyminicard__display__unfav__icon" src={heart_filled} alt="unfav"></img>
+          </div>
         </div>
-      </a>
+
+      </div>
     );
   }
 }

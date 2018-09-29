@@ -1,13 +1,13 @@
-import React from 'react'
-import './Logo.css'
+import React from 'react';
+import './Logo.css';
 import { Link } from 'react-router-dom';
 
-const profile_picture = require('../../../assets/profile_picture.png')
-const compass = require('../../../assets/compass.svg')
-const heart = require('../../../assets/heart.svg')
-const post = require('../../../assets/post.svg')
-const search = require('../../../assets/search.svg')
-const logout = require('../../../assets/logout.svg')
+const profile_picture = require('../../../assets/profile_picture.png');
+const compass = require('../../../assets/compass.svg');
+const heart = require('../../../assets/heart.svg');
+const post = require('../../../assets/post.svg');
+const search = require('../../../assets/search.svg');
+const logout = require('../../../assets/logout.svg');
 
 
 export default class Logo extends React.Component {
@@ -27,24 +27,24 @@ export default class Logo extends React.Component {
 
           <li className="App__logo__menu__discover">
             <Link to='/discover'>
-            <img className="App__logo__menu--icon" src={compass}></img>
+              <img className="App__logo__menu--icon" src={compass}></img>
             Discover</Link>
           </li>
           <li className="App__logo__menu__favorites">
             <Link to='/favorites'>
-            <img className="App__logo__menu--icon" src={heart}></img>
+              <img className="App__logo__menu--icon" src={heart}></img>
             Favorites</Link>
           </li>
           <li className="App__logo__menu__postHobby">
             <Link to='/create'>
-            <img className="App__logo__menu--icon" src={post}>
-            </img>
+              <img className="App__logo__menu--icon" src={post}>
+              </img>
             Post a hobby</Link>
           </li>
           <li className="App__logo__menu__search">
             <Link to='/search'>
-            <img className="App__logo__menu--icon" src={search}>
-            </img>
+              <img className="App__logo__menu--icon" src={search}>
+              </img>
             Search</Link>
           </li>
         </ul>
@@ -54,7 +54,7 @@ export default class Logo extends React.Component {
         </div>
       </div>
 
-    )
+    );
   }
 }
 
