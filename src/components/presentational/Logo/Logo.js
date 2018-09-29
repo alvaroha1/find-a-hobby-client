@@ -1,5 +1,7 @@
 import React from 'react'
-import './logo.css'
+import './Logo.css'
+import { Link } from 'react-router-dom';
+
 const profile_picture = require('../../../assets/profile_picture.png')
 const compass = require('../../../assets/compass.svg')
 const heart = require('../../../assets/heart.svg')
@@ -21,24 +23,28 @@ export default class Logo extends React.Component {
         </div>
         <div className="App__logo__line"></div>
         <ul className="App__logo__menu">
-          <li className="App__logo__menu__discover"
-            onClick={this.props.handleClick}>
+
+          <li className="App__logo__menu__discover">
+            <Link to='/discover'>
             <img className="App__logo__menu--icon" src={compass}></img>
-            Discover
+            Discover</Link>
           </li>
           <li className="App__logo__menu__favorites">
+            <Link to='/favorites'>
             <img className="App__logo__menu--icon" src={heart}></img>
-            Favorites
+            Favorites</Link>
           </li>
           <li className="App__logo__menu__postHobby">
+            <Link to='/create'> 
             <img className="App__logo__menu--icon" src={post}>
             </img>
-            Post a hobby
+            Post a hobby</Link>
           </li>
           <li className="App__logo__menu__search">
+            <Link to='/search'>
             <img className="App__logo__menu--icon" src={search}>
             </img>
-            Search
+            Search</Link>
           </li>
         </ul>
         <div className="App__logo__logout">
@@ -46,6 +52,7 @@ export default class Logo extends React.Component {
           Logout
         </div>
       </div>
+
     )
   }
 }

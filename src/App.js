@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Page, Splitter, SplitterSide, SplitterContent} from 'react-onsenui';
 import './App.css';
-import Discover from './components/functional/Discover'
-import List from './components/functional/List'
-import PostHobby from './components/functional/PostHobby'
 import Logo from './components/presentational/Logo'
-import Presentation from './components/presentational/Presentation'
 import BigScreenMenu from './components/presentational/BigScreenMenu'
+import HobbyCard from './components/presentational/HobbyCard/HobbyCard';
+import Favorites from './components/presentational/Favorites/Favorites';
+import CreateAHobby from './components/presentational/CreateHobby/CreateAHobby';
+import Search from './components/functional/Search/Search';
+import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor (props) {
@@ -90,36 +90,39 @@ class App extends Component {
   // }
 
   render() {
-    let view;
-    switch (this.state.currentView) {
-      case 'Logo':
-      view = <Logo handleClick={this.changeViewAfterLogo} />
-      break;
-      case 'Presentation':
-        view = <Presentation handleClick={() => this.changeView('Discover')}/>
-        break;
-      case 'Discover':
-        view = <Discover passLikedHobby={this.passLikedHobby}
-          passDislikedHobby={this.passDislikedHobby}
-          seenHobbies={this.state.seenHobbies}/>
-        break;
-      case 'List':
-        view = <List hobbies={this.state.likedHobbies}/>
-        break;
-      case 'PostHobby':
-        view = <PostHobby />
-        break;
-      default:
-      view = <h1>Oops something went wrong!</h1>
-    }
+   
+    // let view;
+    // switch (this.state.currentView) {
+    //   case 'Logo':
+    //   view = <Logo handleClick={this.changeViewAfterLogo} />
+    //   break;
+    //   case 'Presentation':
+    //     view = <Presentation handleClick={() => this.changeView('Discover')}/>
+    //     break;
+    //   case 'Discover':
+    //     view = <Discover passLikedHobby={this.passLikedHobby}
+    //       passDislikedHobby={this.passDislikedHobby}
+    //       seenHobbies={this.state.seenHobbies}/>
+    //     break;
+    //   case 'List':
+    //     view = <List hobbies={this.state.likedHobbies}/>
+    //     break;
+    //   case 'PostHobby':
+    //     view = <PostHobby />
+    //     break;
+    //   default:
+    //   view = <h1>Oops something went wrong!</h1>
 
     return (
       <div className="App">
-          {view}
-            {this.renderBigScreenMenu()}
+        <Route path="/discover" exact component={HobbyCard} />
+        <Route path="/search" exact component={Search} />
+        <Route path="/create" exact component={CreateAHobby} />
+        <Route path="/favorites" exact component={Favorites} />
+        <Logo></Logo>
+      
       </div>
     );
   }
 }
-
 export default App;
