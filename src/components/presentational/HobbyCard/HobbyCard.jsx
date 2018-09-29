@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import SwipeButtons from '../SwipeButtons/SwipeButtons';
-import './hobbycard.css';
+import './HobbyCard.css';
 
 
 export default class HobbyCard extends React.Component {

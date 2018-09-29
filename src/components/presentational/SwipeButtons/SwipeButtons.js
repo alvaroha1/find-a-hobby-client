@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './swipebuttons.css';
+import './SwipeButtons.css';
 const heart_filled = require('../../../assets/heart-filled.svg');
 const cross = require('../../../assets/cross.svg');
 
