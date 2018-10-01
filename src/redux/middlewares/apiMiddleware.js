@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/';
+const BASE_URL = 'http://localhost:3000';
 
 export default store => next => action => {
   if (!action.api) return next(action);
@@ -10,6 +10,11 @@ export default store => next => action => {
   if (body) {
     body = JSON.stringify(body);
     defaultHeaders['Content-type'] = 'application/json';
+  }
+
+  const token = store.getState().authentication ? store.getState().authentication.token : undefined;
+  if (token) {
+    defaultHeaders.Authorization = `Bearer ${token}`;
   }
 
   headers = {

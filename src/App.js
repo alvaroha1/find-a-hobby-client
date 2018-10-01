@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Logo from './components/presentational/Logo'
-import HobbyCard from './components/presentational/HobbyCard'
+import Discover from './components/functional/Discover'
 import Search from './components/presentational/Search'
 import CreateAHobby from './components/presentational/CreateHobby'
 import Favorites from './components/presentational/Favorites'
@@ -32,17 +32,7 @@ class App extends Component {
   // setHobbyAsSeen = (hobby) => {
   //   this.setState({seenHobbies: [...this.state.seenHobbies, hobby]})
   // }
-
-  // passLikedHobby = (hobby) => {
-  //   this.setState({likedHobbies: [...this.state.likedHobbies, hobby]})
-  //   this.setHobbyAsSeen(hobby);
-  // }
-  //
-  // passDislikedHobby = (hobby) => {
-  //   this.setState({dislikedHobbies: [...this.state.dislikedHobbies, hobby]})
-  //   this.setHobbyAsSeen(hobby);
-  // }
-  //
+  
   // changeView = (currentView) => {
   //   this.setState({currentView})
   // }
@@ -120,7 +110,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Route path="/discover" exact component={HobbyCard} />
+        <Route path="/discover" exact component={Discover} />
         <Route path="/search" exact component={Search} />
         <Route path="/create" exact component={CreateAHobby} />
         <Route path="/favorites" exact component={Favorites} />
