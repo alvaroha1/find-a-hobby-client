@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import './SwipeButtons.css';
 const heart_filled = require('../../../assets/heart-filled.svg');
 const cross = require('../../../assets/cross.svg');
+const weight = require('../../../assets/weight.svg');
+const paint_brush = require('../../../assets/paint-palette.svg');
+const money_bag = require('../../../assets/money-bag.svg');
 
 
 export class SwipeButtons extends Component {
@@ -29,11 +32,23 @@ export class SwipeButtons extends Component {
         </div>
         <div className="App__swipebuttons__stats">
           <div className="App__swipebuttons__stats__exercise"
-            style={{height: this.props.tags[1].average}}>e</div>
+            style={{height: this.props.tags[1].average + 10}}>
+            <div className="letter">
+              <img src={weight}></img>
+            </div>
+          </div>
           <div className="App__swipebuttons__stats__money"
-            style={{height: this.props.tags[0].average}}>m</div>
+            style={{height: this.props.tags[0].average + 10}}>
+            <div className="letter">
+              <img src={money_bag}></img>
+            </div>
+          </div>
           <div className="App__swipebuttons__stats__creativity"
-            style={{height: this.props.tags[2].average}}>c</div>
+            style={{height: this.props.tags[2].average + 10}}>
+            <div className="letter">
+              <img src={paint_brush}></img>
+            </div>
+          </div>
         </div>
         <div onClick={this.dislikeThisHobby} className='App__swipebuttons__dislike'>
           <img className='App__swipebuttons__dislike--icon' src={cross} alt="Dislike"></img>

@@ -7,8 +7,6 @@ const menu = require('../../../assets/menu.svg')
 export default class Navbar extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-    }
   }
 
   render () {

@@ -36,8 +36,18 @@ export const dislikeHobby = apiInfo => ({
   }
 });
 
-export const Discover = apiInfo => ({
+export const postHobby = apiInfo => ({
   type: 'POST_HOBBY',
+  api: {
+    endpoint: apiInfo.endpoint,
+    method: apiInfo.method,
+    body: apiInfo.body,
+    headers: apiInfo.headers
+  }
+});
+
+export const Favorites = apiInfo => ({
+  type: 'FAVORITES',
   api: {
     endpoint: apiInfo.endpoint,
     method: apiInfo.method,

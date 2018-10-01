@@ -32,7 +32,13 @@ const reducer = (state = initalState, action) => {
   return {
       ...state,
         hobbies: action.data
-    };  
+    }; 
+     
+  case 'FAVORITES_SUCCESS':
+    return {
+      ...state,
+      hobbies: action.data
+    };
 
   default:
     return state;
