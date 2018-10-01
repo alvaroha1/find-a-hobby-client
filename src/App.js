@@ -12,6 +12,7 @@ import SignIn from './components/presentational/Auth/SignIn/SignIn'
 
 
 import { Route } from 'react-router-dom'
+import PicturesBrowser from './components/presentational/PicturesBrowser/PicturesBrowser';
 
 class App extends Component {
   constructor (props) {
@@ -119,6 +120,8 @@ class App extends Component {
         <Route path="/signup" exact component={SignUp} />
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signout" exact component={Auth} />
+        <Route path="/pictures" exact component={PicturesBrowser} />
+
       </div>
     );
   }
