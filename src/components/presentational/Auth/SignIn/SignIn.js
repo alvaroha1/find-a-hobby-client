@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 
 export default class SignIn extends Component {
   
+  handleChange(e){
+    this.setState(
+        {
+            [e.target.name]: e.target.value
+        }
+    )
+  }
   render() {
     return (
       <div className="authForm" className="card border-dark CreateTopic">
@@ -37,24 +44,3 @@ export default class SignIn extends Component {
 }
 
 
-<form>
-<input
-    className="form-item"
-    placeholder="Username goes here..."
-    name="username"
-    type="text"
-    onChange={this.handleChange}
-/>
-<input
-    className="form-item"
-    placeholder="Password goes here..."
-    name="password"
-    type="password"
-    onChange={this.handleChange}
-/>
-<input
-    className="form-submit"
-    value="SUBMIT"
-    type="submit"
-/>
-</form>

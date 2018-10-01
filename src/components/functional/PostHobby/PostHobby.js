@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import apiClient from '../../../lib/apiClient';
 import './PostHobby.css';
+import { connect } from 'react-redux';
+
 
 export default class PostHobby extends Component {
   constructor (props) {
@@ -197,3 +199,17 @@ export default class PostHobby extends Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  hobbies: state.hobbies,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  postHobbyInDatabase: () => dispatch({
+    type: 'POST_HOBBY',
+    api: {
+      endpoint: '/postHobby'
+    }
+  })
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostHobby);

@@ -10,7 +10,6 @@ export default class SignUp extends Component {
   this.state = {
     userName: '',
     password: '',
-    password: '',
     email: ''
   };
 }
