@@ -124,10 +124,9 @@ export class Discover extends Component {
         key={card._id}
         ></HobbyCard>
     })
-    console.log(hobbies[0])
 
     return (
-      hobbies.length ? hobbies[0] : <h1>No hobbies to show</h1>
+      hobbies.length ? hobbies[0] : <HobbyCard></HobbyCard>
     );
   }
 }

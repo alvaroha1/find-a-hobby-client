@@ -28,6 +28,12 @@ const reducer = (state = initalState, action) => {
       hobbyId: action.data.hobbyId
     };
 
+  case 'FAVORITES_SUCCESS':
+    return {
+      ...state,
+      hobbies: action.data
+    };
+
   default:
     return state;
   }
