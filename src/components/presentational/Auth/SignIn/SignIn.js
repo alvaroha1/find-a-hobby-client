@@ -12,9 +12,19 @@ export default class SignIn extends Component {
         <div className="card card-body">
           <form>
             <div className="form-group">
-            <input type="text" name="username" onChange={this.onHandle} placeholder="User Name" className="form-control"/>
-            <input type="text" name="password" onChange={this.onHandle} placeholder="Password" className="form-control"/>
-             <button className="button" onClick={this.loginUser}>Login</button>
+            <input 
+              type="text" 
+              name="username" 
+              onChange={this.onHandle} 
+              placeholder="User Name" 
+              className="form-control"/>
+            <input 
+              type="text" 
+              name="password" 
+              onChange={this.onHandle} 
+              placeholder="Password" 
+              className="form-control"/>
+             <input className="button" value="Login" type="submit"></input>
              <Link to='/auth'>
                 <input type="submit" className="button" value="Nah" />
               </Link>
@@ -25,3 +35,26 @@ export default class SignIn extends Component {
     )
   }
 }
+
+
+<form>
+<input
+    className="form-item"
+    placeholder="Username goes here..."
+    name="username"
+    type="text"
+    onChange={this.handleChange}
+/>
+<input
+    className="form-item"
+    placeholder="Password goes here..."
+    name="password"
+    type="password"
+    onChange={this.handleChange}
+/>
+<input
+    className="form-submit"
+    value="SUBMIT"
+    type="submit"
+/>
+</form>
