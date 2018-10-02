@@ -10,10 +10,6 @@ const money_bag = require('../../../assets/money-bag.svg');
 
 export class SwipeButtons extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   likeThisHobby = () => {
     this.props.likeHobbie(this.props.Id);
   }
@@ -34,19 +30,19 @@ export class SwipeButtons extends Component {
           <div className="App__swipebuttons__stats__exercise"
             style={{height: this.props.tags[1].average + 10}}>
             <div className="letter">
-              <img src={weight}></img>
+              <img src={weight} alt="weight"></img>
             </div>
           </div>
           <div className="App__swipebuttons__stats__money"
             style={{height: this.props.tags[0].average + 10}}>
             <div className="letter">
-              <img src={money_bag}></img>
+              <img src={money_bag} alt="money bag"></img>
             </div>
           </div>
           <div className="App__swipebuttons__stats__creativity"
             style={{height: this.props.tags[2].average + 10}}>
             <div className="letter">
-              <img src={paint_brush}></img>
+              <img src={paint_brush} alt="paint brush"></img>
             </div>
           </div>
         </div>

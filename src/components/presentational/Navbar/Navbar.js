@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './Navbar.css'
-const menu = require('../../../assets/menu.svg')
+import './Navbar.css';
+const menu = require('../../../assets/menu.svg');
 
-export default class Navbar extends Component {
-  constructor (props) {
-    super(props)
-  }
+export default class Navbar extends React.Component {
 
   render () {
     return (
       <div className="App__navbar">
         <Button className="App__navbar__tomenu">
-        <Link to='/'>
-          <img className="App__navbar__tomenu__icon" src={menu} alt="Menu"/>
+          <Link to='/'>
+            <img className="App__navbar__tomenu__icon" src={menu} alt="Menu"/>
           </Link>
         </Button>
         <h1 className="App__navbar__currentview">{this.props.title}</h1>
       </div>
-    )
+    );
   }
 }

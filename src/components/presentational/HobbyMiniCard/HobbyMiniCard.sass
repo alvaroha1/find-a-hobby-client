@@ -52,12 +52,11 @@
   align-self: flex-end
 
 .App__hobbyminicard__display__stats__letters
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: flex-end
-  width: 100%
-  color: #9B9B9B
+  position: relative
+  top: -12px
+  font-size: 10px
+
+
 
 .App__hobbyminicard__display__stats__bars
   display: flex
@@ -72,15 +71,6 @@
   width: 8px
   border-radius: 5px 5px 0 0
   background-color: #EE566D
-
-.App__hobbyminicard__display__stats__letters__m
-  font-size: 0.8em
-
-.App__hobbyminicard__display__stats__letters__e
-  @extend .App__hobbyminicard__display__stats__letters__m
-
-.App__hobbyminicard__display__stats__letters__c
-  @extend .App__hobbyminicard__display__stats__letters__m
 
 .App__hobbyminicard__display__stats__bars__money
   @extend .App__hobbyminicard__display__stats__bars__exercise
