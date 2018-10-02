@@ -44,27 +44,19 @@ const reducer = (state = initalState, action) => {
       hobbyId: action.data.hobbyId
     };
 
-<<<<<<< HEAD
+
   case 'POSTHOBBY_SUCCESS':
-  return {
-      ...state,
-      coompleteHobby: action.data
-    }; 
-  
-  case 'CREATEHOBBY':
-  return {
-      ...state,
-      currentHobby: action.data
-    };  
-     
-=======
-  case 'POST_HOBBY':
     return {
       ...state,
-      hobbies: action.data
+      coompleteHobby: action.data
     };
 
->>>>>>> refs/remotes/origin/master
+  case 'CREATEHOBBY':
+    return {
+      ...state,
+      currentHobby: action.data
+    };
+
   case 'FAVORITES_SUCCESS':
     return {
       ...state,
