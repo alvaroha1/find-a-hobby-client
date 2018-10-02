@@ -184,9 +184,9 @@ export class CreateAHobby extends React.Component {
           </div>
           {/* <h3>Proceed to the next step</h3> */}
           <Link to='/pictures'>
-            <input 
-            className="App__createahobby__form__post" 
-            type="submit" 
+            <input
+            className="App__createahobby__form__post"
+            type="submit"
             value="Next"
             onClick={this.addHobby}/>
             </Link>
