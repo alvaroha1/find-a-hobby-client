@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 
 
 export default class CreateAHobby extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,8 +27,6 @@ export default class CreateAHobby extends React.Component {
     // this.postHobbiesToDiscover();
     // console.log(this.state)
   }
-
-
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -110,6 +110,7 @@ export default class CreateAHobby extends React.Component {
     this.setState({submitted:true});
     console.log(formattedHobby);
     event.preventDefault();
+    Link
   }
 
 
@@ -183,17 +184,15 @@ export default class CreateAHobby extends React.Component {
           </div>
           <h3>Create your Hobby</h3>
           <Link to='/pictures'>
-            <div>
               <input 
               className="App__createahobby__form__post" 
               type="submit" 
               name="Create!"
-              onClick={this.addHobby}/>
-            </div>
-          </Link>
+              onClick={this.addHobby}>Create</input></Link>
         </form>
       </div>
     );
   }
 }
 
+{/* <Link to='/pictures'></Link> */}

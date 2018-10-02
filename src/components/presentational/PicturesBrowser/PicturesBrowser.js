@@ -8,10 +8,21 @@ const url = 'https://api.unsplash.com/search/photos/?query=%27+product+%27&clien
 const API_ID = 'e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7'; 
 const input = '';
 const localServer = 'http://localhost:3001/create';
+// const queryURL = 'https://api.unsplash.com/search/photos/?query='+ this.state.title + '%27&client_id=' + this.API_ID;
+const queryURLT = 'https://api.unsplash.com/search/photos/?query='+ 'cars' + '%27&client_id=' + this.API_ID;
+
 
 export default class PicturesBrowser extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      picture: '',
+    }
+  }
+
+
   fetchPictures() {
-    fetch(url+API_ID)
+    fetch(queryURLT)
     .then(function(response) {
       return response.json();
     })
@@ -20,16 +31,21 @@ export default class PicturesBrowser extends Component {
     });
   }
 
-  fetchHobby = (e) => {
+  fetchHobby = () => {
+    const fHobby = this.state;
     fetch(localServer, {
       method: 'POST', 
-      body: JSON.stringify(e), 
+      body: JSON.stringify(fHobby), 
       headers:{
         'Content-Type': 'application/json'
       }
     }).then(res => res.json())
-    .then(console.log('hobby posted'))
+    .then(console.log('hobby sent to the db'))
   };
+
+  test() {
+    console.log('hey you');
+  }
 
   render() {
     return (
@@ -43,6 +59,17 @@ export default class PicturesBrowser extends Component {
           // value={this.state.picture}
           // onChange={this.handleInputChange}
           >
+            <div className="flexbin">
+              <a onClick={this.test}>
+                  <img src="https://images.unsplash.com/photo-1524634126442-357e0eac3c14?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjM3ODc2fQ&s=18629391c0453d348eb13b22c6a6611d" />
+              </a>
+              <a onClick={this.test}>
+                  <img src="https://images.unsplash.com/photo-1534105615256-13940a56ff44?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjM3ODc2fQ&s=606b44cc5b1136621626dcbfdc2330fb" />
+              </a>
+              <a onClick={this.test}>
+                  <img src="https://images.unsplash.com/photo-1526049997133-25caee4c5796?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjM3ODc2fQ&s=8b437093ab70092fd8e9609858b2445e" />
+              </a>
+            </div>
           </div>
   
           <h3>Choose a Picture</h3>
@@ -51,6 +78,11 @@ export default class PicturesBrowser extends Component {
             type="submit" 
             name="Create!"
             onClick={this.fetchHobby}/>
+               <input 
+            className="App__createahobby__form__post" 
+            type="submit" 
+            name="Create!"
+            onClick={this.fetchPictures}/>
         </form>
       </div>
     )
