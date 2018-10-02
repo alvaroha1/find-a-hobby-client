@@ -2,6 +2,8 @@
   display: flex
   flex-direction: $direction
 
+$main_red: #EE566D
+
 
 *
   padding: 0
@@ -49,16 +51,16 @@
 .App__logo__profile__userinfo__hobbies
   +flexProperties(row)
   font-size: 0.8em
-  color: #EE566D
+  color: $main_red
 
 .App__logo__profile__userinfo__city
   +flexProperties(row)
   font-size: 0.8em
-  color: #EE566D
+  color: $main_red
 
 .App__logo__line
   width: 100vw
-  border-bottom: solid 1px #EE566D
+  border-bottom: solid 1px $main_red
 
 .App__logo__menu
   +flexProperties(column)
@@ -93,7 +95,7 @@
   padding-left: 5vw
   margin-bottom: 5vw
   height: 10vh
-  color: #EE566D
+  color: $main_red
   font-weight: bold
 
   .App__logo__logout--icon

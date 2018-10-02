@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './SignUp.css';
 import { Link } from 'react-router-dom';
+import background from'../../../../assets/login_background.png';
 
 const url12 = 'http://localhost:30001/users';
 
@@ -15,7 +16,7 @@ export default class SignUp extends Component {
 }
 
 createUser = (event) => {
-  event.preventDefault(); 
+  event.preventDefault();
   this.props.createUser(this.state);
   console.log(this.state);
   // event.currentTarget.reset();
@@ -23,8 +24,8 @@ createUser = (event) => {
 
 // addEvent = (event) => {
 //   fetch(url2, {
-//     method: 'POST', 
-//     body: JSON.stringify(event), 
+//     method: 'POST',
+//     body: JSON.stringify(event),
 //     headers:{
 //       'Content-Type': 'application/json'
 //     }
@@ -38,23 +39,24 @@ createUser = (event) => {
 // }
   render() {
     return (
-      <div className="authForm" className="card border-dark CreateTopic">
-      <h3 className="card-header">SELLING YOUR DATA IN 3, 2, 1...</h3>
-        <div className="card card-body">
-          <form>
-            <div className="form-group">
-            <input type="text" name="username" onChange={this.onHandle} placeholder="User Name" className="form-control"/>
-            <input type="text" name="password" onChange={this.onHandle} placeholder="Password" className="form-control"/>
-            <input type="text" name="password" onChange={this.onHandle} placeholder="Repeat your Password" className="form-control"/>
-            <input type="email" name="email" onChange={this.onHandle} placeholder="Email" className="form-control"/>
-             <input type="submit" name="Login" className="button" onClick={this.createUser}/>
-             <Link to='/auth'>
-                <input type="submit" className="button" value="Nah" />
-              </Link>
-          </div>
-          </form>
+      <div className="App__signup">
+        <img className="App__signup__background" src={background}></img>
+        <h3 className="App__signup__title">SIGN UP</h3>
+        <form className="App__signup_form">
+          <input type="text" name="name" onChange={this.onHandle} placeholder="Full Name" className="App__signup_form__input"/>
+          <input type="text" name="username" onChange={this.onHandle} placeholder="User Name" className="App__signup_form__input"/>
+          <input type="text" name="password" onChange={this.onHandle} placeholder="Password" className="App__signup_form__input"/>
+          <input type="text" name="password" onChange={this.onHandle} placeholder="Repeat your Password" className="App__signup_form__input"/>
+          <input type="email" name="email" onChange={this.onHandle} placeholder="Email" className="App__signup_form__input"/>
+          <input type="submit" name="Login" className="App__signup_form__buttons__button__create" onClick={this.createUser}/>
+        </form>
+        <div className="App__signup_form__buttons__signin">
+          <div className="App__signup_form__buttons__account">Already have an account?</div>
+          <Link to='/signin'>
+            <input type="submit" className="App__signup_form__buttons__button" value="Sign In" />
+          </Link>
         </div>
-        </div>
+      </div>
     )
   }
 }

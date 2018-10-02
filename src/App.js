@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Logo from './components/presentational/Logo'
-import Discover from './components/functional/Discover'
-import Search from './components/presentational/Search'
-import CreateAHobby from './components/presentational/CreateHobby'
-import Favorites from './components/presentational/Favorites'
-import Auth from './components/presentational/Auth'
-import SignUp from './components/presentational/Auth/SignUp/SignUp'
-import SignIn from './components/presentational/Auth/SignIn/SignIn'
+import Logo from './components/presentational/Logo';
+import Discover from './components/functional/Discover';
+import Search from './components/presentational/Search';
+import CreateAHobby from './components/presentational/CreateHobby';
+import Favorites from './components/presentational/Favorites';
+import SignUp from './components/presentational/Auth/SignUp/SignUp';
+import SignIn from './components/presentational/Auth/SignIn/SignIn';
 
 
 
@@ -33,7 +32,7 @@ class App extends Component {
   // setHobbyAsSeen = (hobby) => {
   //   this.setState({seenHobbies: [...this.state.seenHobbies, hobby]})
   // }
-  
+
   // changeView = (currentView) => {
   //   this.setState({currentView})
   // }
@@ -116,10 +115,9 @@ class App extends Component {
         <Route path="/create" exact component={CreateAHobby} />
         <Route path="/favorites" exact component={Favorites} />
         <Route path="/" exact component={Logo} />
-        <Route path="/auth" exact component={Auth} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/signin" exact component={SignIn} />
-        <Route path="/signout" exact component={Auth} />
+        <Route path="/signout" exact component={SignIn} />
         <Route path="/pictures" exact component={PicturesBrowser} />
 
       </div>

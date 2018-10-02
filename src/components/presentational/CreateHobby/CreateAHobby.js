@@ -120,27 +120,27 @@ export default class CreateAHobby extends React.Component {
       <div className="App__createahobby">
         <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
-          <input 
-            className="App__createahobby__form__title" 
-            type="text" 
-            name="title" 
+          <input
+            className="App__createahobby__form__title"
+            type="text"
+            name="title"
             placeholder="Title"
             value={this.state.title}
             onChange={this.handleInputChange} />
-          <input 
-            className="App__createahobby__form__description" 
-            type="text" 
-            name="description" 
+          <input
+            className="App__createahobby__form__description"
+            type="text"
+            name="description"
             placeholder="Description"
             value={this.state.description}
             onChange={this.handleInputChange} />
-        {/* <div 
+        {/* <div
           className="App__createahobby__form__selectimage"
           name="pictureURL"
           placeholder="Picture e.g. https://vegan.me/soup.jpg"
           value={this.state.picture}
           onChange={this.handleInputChange}></div> */}
-  
+
         <div className="tag-sliders">
           <label className='money-label'>
             {/* <i className="fas fa-dollar-sign"></i> */}
@@ -183,12 +183,11 @@ export default class CreateAHobby extends React.Component {
             <br />
           </div>
           <h3>Create your Hobby</h3>
-          <Link to='/pictures'>
-              <input 
-              className="App__createahobby__form__post" 
-              type="submit" 
+              <input
+              className="App__createahobby__form__post"
+              type="submit"
               name="Create!"
-              onClick={this.addHobby}>Create</input></Link>
+              onClick={this.addHobby}/>
         </form>
       </div>
     );
