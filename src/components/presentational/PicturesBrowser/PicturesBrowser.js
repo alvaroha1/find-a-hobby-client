@@ -2,64 +2,69 @@ import React, { Component } from 'react';
 import './PicturesBrowser.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
+import { connect } from 'react-redux';
 
-
-const url = 'https://api.unsplash.com/search/photos/?query=%27+product+%27&client_id='
-const API_ID = 'e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7'; 
-const input = '';
+const url_1 ='https://api.unsplash.com/search/photos/?query=';
+const url_2 ='%27&client_id=';
+const API_ID ='e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7'; 
 const localServer = 'http://localhost:3001/create';
-// const queryURL = 'https://api.unsplash.com/search/photos/?query='+ this.state.title + '%27&client_id=' + this.API_ID;
-const queryURLT = 'https://api.unsplash.com/search/photos/?query='+ 'cars' + '%27&client_id=' + this.API_ID;
+// const title = this.props.currentHobby.title;
 
-
-export default class PicturesBrowser extends Component {
+class PicturesBrowser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      picture: '',
+      currentHobby: this.props.currentHobby
     }
   }
 
-
-  fetchPictures() {
-    fetch(queryURLT)
+  fetchPictures = () => {
+    fetch(url_1+this.state.currentHobby.title+url_2+API_ID)
     .then(function(response) {
       return response.json();
     })
-      .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
+    .then(function(myJson) {
+      
+      let img = myJson.results.map(image => image.urls.small);
+      console.log(img);
     });
   }
 
-  fetchHobby = () => {
-    const fHobby = this.state;
-    fetch(localServer, {
-      method: 'POST', 
-      body: JSON.stringify(fHobby), 
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json())
-    .then(console.log('hobby sent to the db'))
-  };
+  test = (event) => {
+    console.log(this.state.currentHobby,'hey');
+    event.preventDefault();
+    // this.fetchPictures();
+  }
 
-  test() {
-    console.log('hey you');
+  addPicture = (event) => {
+    this.setState.currentHobby.picture = event;
+  }
+
+  fetchHobby = async (event) => {
+    const hobby = this.state;
+
+    const completeHobby = {
+      name: hobby.name,
+      description: hobby.description,
+      picture: hobby.picture,
+      tags: hobby.tags 
+    }
+    this.setState(completeHobby);
+    this.props.createHobby(completeHobby);
   }
 
   render() {
+    this.fetchPictures();
     return (
       <div className="App__createahobby">
         <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
         <div 
           className="App__createahobby__form__selectimage"
-          name="pictureURL"
-          placeholder="Picture e.g. https://vegan.me/soup.jpg"
-          // value={this.state.picture}
-          // onChange={this.handleInputChange}
-          >
+          name="pictureURL">
             <div className="flexbin">
+              {/* {pictures.map(el => <a value={el} key={el}> {el} onClick={this.addPicture}</a>)} */}
+              
               <a onClick={this.test}>
                   <img src="https://images.unsplash.com/photo-1524634126442-357e0eac3c14?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjM3ODc2fQ&s=18629391c0453d348eb13b22c6a6611d" />
               </a>
@@ -73,76 +78,50 @@ export default class PicturesBrowser extends Component {
           </div>
   
           <h3>Choose a Picture</h3>
+          <Link to='/create'> 
+            <input 
+              className="App__createahobby__form__post" 
+              type="submit" 
+              value="Go Back"
+              onClick={this.fetchHobby}/>
+          </Link>
             <input 
             className="App__createahobby__form__post" 
             type="submit" 
-            name="Create!"
+            value="Create Hobby"
             onClick={this.fetchHobby}/>
                <input 
             className="App__createahobby__form__post" 
             type="submit" 
-            name="Create!"
-            onClick={this.fetchPictures}/>
+            value="Test"
+            onClick={this.test}/>
         </form>
       </div>
     )
   }
 }
 
-/*
-Link: <https://api.unsplash.com/search/photos?page=1&query=office>; rel="first", 
-<https://api.unsplash.com/search/photos?page=1&query=office>; rel="prev", 
-<https://api.unsplash.com/search/photos?page=3&query=office>; rel="last", 
-<https://api.unsplash.com/search/photos?page=3&query=office>; rel="next"
+const mapStateToProps = (state) => ({
+  currentHobby: state.currentHobby
+});
 
-https://api.unsplash.com/search/photos/?per_page=10&query=house+product+%27&client_id=e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7
-
-
-export function getMovies() {
-  fetch('http://movied.herokuapp.com/discover')
-  .then(function(response) {
-    return response.json();
+const mapDispatchToProps = (dispatch) => ({
+  postHobby: () => dispatch({
+    type: 'POSTHOBBY',
+    api: {
+      endpoint: '/postHobby'
+    }
   })
-  .then((myJson) => {
-    this.setState({
-      movies: myJson
-    });
-  });
+});
 
-};
+export default connect(mapStateToProps, mapDispatchToProps)(PicturesBrowser);
 
-export function renderMovies() {
-  return this.state.movies.map(movie => <img onClick={this.getClicked} onMouseOver={this.getDragged} onMouseOut={this.getUndragged} className="moviePoster" src={"https://image.tmdb.org/t/p/w300" + movie.backdrop_path }></img>)
-};
 
-  renderMovies = () => {
-    return this.state.myMovies.map(movie => <img onClick={this.getClicked} onMouseOver={this.getDragged} onMouseOut={this.getUndragged} className="moviePoster" src={"https://image.tmdb.org/t/p/w300" + movie.backdrop_path }></img>)
-  };
+//TO Do's
 
-  fetchPictures(title) {
-    fetch(`https://api.unsplash.com/search/photos/?query=${title}+product+%27&client_id=`+ API_ID)
-    .then(function(response) {
-      return response.json();
-    })
-    .then((myJson) => {
-      this.setState({
-        pictures: myJson
-      });
-    });
-  }
-
-  const url = 'https://api.unsplash.com/search/photos/?query=%27+product+%27&client_id='
-const API_ID = 'e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7'; 
-const input = '';
-const url2 = ''
-  addHobby = (e) => {
-    fetch(url2, {
-      method: 'POST', 
-      body: JSON.stringify(e), 
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json())
-    .then(console.log('hobby posted'))
-  };
-*/
+//accedir props
+//arreglar query - com afegir title
+//fer feth correctament
+//renderitzar fotos - passar variable
+//afegir fotos hobby - onClick?
+//posthobby 

@@ -4,17 +4,16 @@ import Navbar from '../Navbar';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import {createHobby} from '../../../redux/actions';
 
-
-
-export default class CreateAHobby extends React.Component {
-
+export class CreateAHobby extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       name: '',
       description: '',
+      picture: '',
       getStarted: '',
       bars: {
         money: 33,
@@ -24,9 +23,8 @@ export default class CreateAHobby extends React.Component {
       totalValue: 100,
       submitted:false
     }
-    // this.postHobbiesToDiscover();
-    // console.log(this.state)
   }
+
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -35,7 +33,7 @@ export default class CreateAHobby extends React.Component {
     this.setState({
       [name]: value
     });
-    console.log(event);
+    // console.log(event);
   }
 
 
@@ -86,10 +84,9 @@ export default class CreateAHobby extends React.Component {
       // links: {
       //   getStarted: hobby.getStarted
       // },
-      // pictures: {
-      // 		thumbnail: hobby.picture,
-      // 		big: hobby.picture
-      // 	},
+      picture: hobby.picture,
+      		// thumbnail: hobby.picture,
+      		// big: hobby.picture,
       tags: [
         {name:"money",
     		votes: 1,
@@ -105,15 +102,13 @@ export default class CreateAHobby extends React.Component {
 		    },
       ]
     }
-
+    this.setState(formattedHobby);
     // apiClient.postHobby(formattedHobby);
-    this.setState({submitted:true});
-    console.log(formattedHobby);
-    event.preventDefault();
-    Link
+    // this.setState({submitted:true});
+    // console.log(formattedHobby);
+    // event.preventDefault();
+    this.props.createHobby(formattedHobby);
   }
-
-
 
   render() {
     return (
@@ -123,9 +118,9 @@ export default class CreateAHobby extends React.Component {
           <input 
             className="App__createahobby__form__title" 
             type="text" 
-            name="title" 
-            placeholder="Title"
-            value={this.state.title}
+            name="name" 
+            placeholder="Name"
+            value={this.state.name}
             onChange={this.handleInputChange} />
           <input 
             className="App__createahobby__form__description" 
@@ -134,6 +129,11 @@ export default class CreateAHobby extends React.Component {
             placeholder="Description"
             value={this.state.description}
             onChange={this.handleInputChange} />
+          {/* <input 
+            type="file" 
+            name="myFile"
+            value={this.state.picture}
+            onChange={this.handleInputChange}/> */}
         {/* <div 
           className="App__createahobby__form__selectimage"
           name="pictureURL"
@@ -182,17 +182,26 @@ export default class CreateAHobby extends React.Component {
              onChange={this.handleBarsChange} />
             <br />
           </div>
-          <h3>Create your Hobby</h3>
+          {/* <h3>Proceed to the next step</h3> */}
           <Link to='/pictures'>
-              <input 
-              className="App__createahobby__form__post" 
-              type="submit" 
-              name="Create!"
-              onClick={this.addHobby}>Create</input></Link>
+            <input 
+            className="App__createahobby__form__post" 
+            type="submit" 
+            value="Next"
+            onClick={this.addHobby}/>
+            </Link>
         </form>
       </div>
     );
   }
 }
 
-{/* <Link to='/pictures'></Link> */}
+const mapStateToProps = (state) => ({
+
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  createHobby: (hobby) => dispatch(createHobby(hobby))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateAHobby);
