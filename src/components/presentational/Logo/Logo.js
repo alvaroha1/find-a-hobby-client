@@ -49,32 +49,13 @@ export default class Logo extends React.Component {
           </li>
         </ul>
         <div className="App__logo__logout">
-        <Link to='/signout'>
-          <img className="App__logo__logout--icon" src={logout} alt="logout"></img>
-          Logout
+          <Link to='/signout'>
+            <img className="App__logo__logout--icon" src={logout} alt="logout"></img>
+            Logout
           </Link>
         </div>
+        <div className="App__logo__footer"></div>
       </div>
-
     );
   }
 }
-
-// <div onClick={this.props.handleClick} className='Logo-wrapper'>
-//   <div className='LogoWrapper-colorHolder'>
-//     <div className='color1 LogoWrapper-colorBar'></div>
-//     <div className='color2 LogoWrapper-colorBar'></div>
-//     <div className='color3 LogoWrapper-colorBar'></div>
-//     <div className='Logo'>
-//       <h1>find a Hobby!</h1>
-//       <br />
-//       <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-//         <i className="fas fa-dollar-sign"></i>
-//         <i className="fas fa-football-ball"></i>
-//         <i className="fab fa-fly"></i>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-// TODO: add number of hobbies available in database under the logo.

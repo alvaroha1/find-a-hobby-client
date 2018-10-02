@@ -60,3 +60,13 @@ export const Favorites = apiInfo => ({
     headers: apiInfo.headers
   }
 });
+
+export const newUser = apiInfo => ({
+  type: 'NEW_USER',
+  api: {
+    endpoint: apiInfo.endpoint,
+    method: apiInfo.method,
+    body: apiInfo.body,
+    headers: apiInfo.headers
+  },
+});

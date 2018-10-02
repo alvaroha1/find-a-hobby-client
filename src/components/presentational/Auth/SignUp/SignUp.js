@@ -1,185 +1,152 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './SignUp.css';
 import { Link } from 'react-router-dom';
+import background from'../../../../assets/login_background.png';
+import { connect } from 'react-redux';
 
-const url12 = 'http://localhost:30001/users';
+export class SignUp extends React.Component {
 
-export default class SignUp extends Component {
-  constructor (props) {
-  super(props);
-  this.state = {
-    userName: '',
-    password: '',
-    email: ''
-  };
+  constructor(props) {
+     super(props);
+     this.state = {
+       username: '',
+       name: '',
+       password: '',
+       confirmPassword: '',
+       email: '',
+       error: {
+         username: '',
+         name: '',
+         password: '',
+         confirmPassword: '',
+         email: '',
+       }
+     };
+
+     this.handleChange = this.handleChange.bind(this);
+     this.createUser = this.createUser.bind(this);
+   }
+
+handleChange(event) {
+  const target = event.target;
+  const value = target.value;
+  const name = target.name;
+
+  this.setState({
+    [name]: value
+  });
 }
 
 createUser = (event) => {
-  event.preventDefault(); 
-  this.props.createUser(this.state);
-  console.log(this.state);
-  // event.currentTarget.reset();
+  event.preventDefault();
+
+  Object.keys(this.state).forEach(key => {
+    if (!this.state[key]) {
+      this.setState({error: { [key]: 'Empty field'}})
+      setTimeout(() => this.setState({error: {[key]: ''}}), 5000)
+    }
+  })
+
+  if (this.state.username &&
+      this.state.name &&
+      this.state.password &&
+      this.state.confirmPassword &&
+      this.state.email) {
+        if (this.state.password !== this.state.confirmPassword) {
+          this.setState({error: { password: 'Passwords should match'}})
+          setTimeout(() => this.setState({error: {password: ''}}), 5000)
+        } else {
+          this.props.createNewUser(this.state)
+        }
+      } else if (this.state.username){
+
+      }
 }
 
-// addEvent = (event) => {
-//   fetch(url2, {
-//     method: 'POST', 
-//     body: JSON.stringify(event), 
-//     headers:{
-//       'Content-Type': 'application/json'
-//     }
-//   }).then(res => res.json())
-//   .then(res => this.fetchEvents())
-//   .catch(error => console.error('Error:', error));
-// }
-
-// onHandle = (e) => {
-//   this.setState({ [e.target.name]: e.target.value });
-// }
   render() {
     return (
-      <div className="authForm" className="card border-dark CreateTopic">
-      <h3 className="card-header">SELLING YOUR DATA IN 3, 2, 1...</h3>
-        <div className="card card-body">
-          <form>
-            <div className="form-group">
-            <input type="text" name="username" onChange={this.onHandle} placeholder="User Name" className="form-control"/>
-            <input type="text" name="password" onChange={this.onHandle} placeholder="Password" className="form-control"/>
-            <input type="text" name="password" onChange={this.onHandle} placeholder="Repeat your Password" className="form-control"/>
-            <input type="email" name="email" onChange={this.onHandle} placeholder="Email" className="form-control"/>
-             <input type="submit" name="Login" className="button" onClick={this.createUser}/>
-             <Link to='/auth'>
-                <input type="submit" className="button" value="Nah" />
-              </Link>
-          </div>
-          </form>
+      <div className="App__signup">
+        <h3 className="App__signup__title">SIGN UP</h3>
+        <form className="App__signup_form">
+          <div className="errors">{this.state.error.empty}</div>
+          <input
+            type="text"
+            value={this.state.name}
+            name="name"
+            onChange={this.handleChange}
+            placeholder="Full Name"
+            className="App__signup_form__input"
+          />
+        <div className="errors">{this.state.error.empty}</div>
+          <input
+            type="text"
+            value={this.state.username}
+            name="username"
+            onChange={this.handleChange}
+            placeholder="User Name"
+            className="App__signup_form__input"
+            autoComplete="username"
+          />
+        <div className="errors">{this.state.error.password}{this.state.error.empty}</div>
+          <input
+            type="password"
+            value={this.state.password}
+            name="password"
+            onChange={this.handleChange}
+            placeholder="Password"
+            className="App__signup_form__input"
+            autoComplete="new-password"
+          />
+          <div className="errors">{this.state.error.password}{this.state.error.empty}</div>
+          <input
+            type="password"
+            value={this.state.confirmPassword}
+            name="confirmPassword"
+            onChange={this.handleChange}
+            placeholder="Repeat your Password"
+            className="App__signup_form__input"
+            autoComplete="new-password"
+          />
+        <div className="errors">{this.state.error.empty}</div>
+          <input
+            type="email"
+            value={this.state.email}
+            name="email"
+            onChange={this.handleChange}
+            placeholder="Email"
+            className="App__signup_form__input"
+          />
+          <input
+            type="submit"
+            value="Sign Up"
+            onClick={this.createUser}
+            className="App__signup_form__buttons__button__create"
+          />
+        </form>
+        <div className="App__signup_form__buttons__signin">
+          <div className="App__signup_form__buttons__account">Already have an account?</div>
+          <Link to='/signin'>
+            <input type="submit" className="App__signup_form__buttons__button" value="Sign In" />
+          </Link>
         </div>
-        </div>
+      </div>
     )
   }
 }
 
+const mapStateToProps = state => ({
+});
 
 
-// import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-// import './SignUp.css';
+const mapDispatchToProps = dispatch => ({
+  createNewUser: (userData) => dispatch({
+    type: 'NEW_USER',
+    api: {
+      endpoint: '/signup',
+      method: 'POST',
+      body: userData,
+    },
+  })
+});
 
-// import { connect } from 'react-redux';
-// import { Redirect } from 'react-router';
-// import { createUser } from '../../../redux/actions';
-
-// class SignUp extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       username: '',
-//       first_name: '',
-//       last_name: '',
-//       password: '',
-//       email: '',
-//       user_image_path: '',
-//       signedUp: false
-//     };
-//   }
-
-//   componentDidUpdate(prevProps) {
-//     if (this.props.user !== prevProps.user) {
-//       console.log('yes ');
-//       this.setState({ signedUp: true });
-//     }
-//   }
-//   sendSignUp = event => {
-//     event.preventDefault();
-
-//     const signUpDetails = {
-//       username: this.state.username,
-//       first_name: this.state.first_name,
-//       last_name: this.state.last_name,
-//       password: this.state.password,
-//       email: this.state.email,
-//       user_image_path: this.state.user_image_path
-//     };
-
-//     this.props.createNewUser({
-//       endpoint: `/users/`,
-//       method: 'POST',
-//       body: signUpDetails
-//     });
-//   };
-
-//   handleFormChange = event => {
-//     this.setState({
-//       [event.target.name]: event.target.value
-//     });
-//   };
-
-//   renderInput = (label, type, name) => {
-//     return (
-//       <div className="divider">
-//         {/*<span> {label} </span>*/}
-//         <input
-//           className="inputField"
-//           type={type}
-//           onChange={this.handleFormChange}
-//           name={name}
-//           placeholder={label}
-//         />
-//       </div>
-//     );
-//   };
-//   renderProfile = () => {
-//     if (this.state.signedUp) {
-//       console.log('yes NUMERO DOS ');
-//       return <Redirect to="/profile" />;
-//     }
-//   };
-
-//   render() {
-//     return (
-//       <div className="signUpContainer">
-//         <img className="logo" src="backgrounds/logo.png" alt="App logo" />
-
-//         <div className="title">
-//           <h3> Sign Up </h3>
-//         </div>
-
-//         <div className="signUpFormContainer">
-//           <form className="signUpForm">
-//             {this.renderInput('Username', 'text', 'username')}
-//             {this.renderInput('First Name', 'text', 'first_name')}
-//             {this.renderInput('Last Name', 'text', 'last_name')}
-//             {this.renderInput('Password', 'text', 'password')}
-//             {this.renderInput('Email', 'text', 'email')}
-//           </form>
-//         </div>
-
-//         <div className="SignUpButton" onClick={this.sendSignUp}>
-//           Register
-//         </div>
-//         <div className="SignUp">
-//           <Link to="/">
-//             {' '}
-//             Returning? <strong>Login.</strong>{' '}
-//           </Link>
-//         </div>
-
-//         {this.renderProfile()}
-//       </div>
-//     );
-//   }
-// }
-
-// const mapDispatchToProps = dispatch => ({
-//   createNewUser: apiInfo => dispatch(createUser(apiInfo))
-// });
-
-// const mapStateToProps = state => ({
-//   user: state.user,
-//   error: state.error
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

@@ -3,15 +3,29 @@ const initalState = {
   currentHobby: {},
   completeHobby: {},
   userId: '',
-  hobbyId: ''
+  hobbyId: '',
+  userData: {},
+  errors: {
+    signup: '',
+  }
 };
 
 const reducer = (state = initalState, action) => {
   switch (action.type) {
+
   case 'DISCOVER_SUCCESS':
     return {
       ...state,
       hobbies: action.data
+    };
+
+  case 'NEW_USER_ERROR':
+    return {
+      ...state,
+      errors:{
+        ...state.errors,
+        signup: action.error
+      }
     };
 
   case 'LIKE_SUCCESS':
@@ -30,6 +44,7 @@ const reducer = (state = initalState, action) => {
       hobbyId: action.data.hobbyId
     };
 
+<<<<<<< HEAD
   case 'POSTHOBBY_SUCCESS':
   return {
       ...state,
@@ -42,6 +57,14 @@ const reducer = (state = initalState, action) => {
       currentHobby: action.data
     };  
      
+=======
+  case 'POST_HOBBY':
+    return {
+      ...state,
+      hobbies: action.data
+    };
+
+>>>>>>> refs/remotes/origin/master
   case 'FAVORITES_SUCCESS':
     return {
       ...state,
