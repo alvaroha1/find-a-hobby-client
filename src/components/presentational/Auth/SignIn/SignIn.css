@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 .App__signin {
   height: 100vh;
   margin: 40vh 10vw 10vh 10vw;
@@ -8,12 +8,12 @@
   width: 100vw;
   z-index: 10;
   position: absolute;
-  top: 5vh;
+  top: 3vh;
   left: 0;
-  font-family: Lobster;
+  font-family: Pacifico;
   color: white;
   font-size: 50px;
-  line-height: 35px;
+  line-height: 50px;
 }
 
 .App__signin__background {

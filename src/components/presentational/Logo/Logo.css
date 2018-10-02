@@ -10,6 +10,7 @@
 *:visited {
   color: inherit;
   text-decoration: none;
+  background-color: #EE566D;
 }
 
 .App__logo {
@@ -19,7 +20,8 @@
 }
 
 .App__logo__profile {
-  margin: 10vw 5vw 10vw 5vw;
+  padding: 10vw 5vw 10vw 5vw;
+  background-color: #EE566D;
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -46,7 +48,7 @@
 .App__logo__profile__userinfo__name {
   font-size: 1.2em;
   text-align: left;
-  color: #9B9B9B;
+  color: white;
   font-weight: bolder;
 }
 
@@ -54,14 +56,14 @@
   display: flex;
   flex-direction: row;
   font-size: 0.8em;
-  color: #EE566D;
+  color: white;
 }
 
 .App__logo__profile__userinfo__city {
   display: flex;
   flex-direction: row;
   font-size: 0.8em;
-  color: #EE566D;
+  color: white;
 }
 
 .App__logo__line {
@@ -80,7 +82,7 @@
 
 .App__logo__menu li {
   height: 10vh;
-  color: #9B9B9B;
+  color: #EE566D;
   vertical-align: middle;
   line-height: 10vh;
   font-weight: bold;
@@ -110,13 +112,20 @@
   color: #EE566D;
   font-weight: bold;
 }
-.App__logo__logout .App__logo__logout--icon {
+
+.App__logo__logout--icon {
   height: 60%;
   top: 0.5em;
   position: relative;
   margin-right: 5vw;
   margin-left: 1vw;
   transform: rotate(180deg);
+}
+
+.App__logo__footer {
+  width: 100vw;
+  height: 10vw;
+  background-color: #EE566D;
 }
 
 /*# sourceMappingURL=logo.css.map */

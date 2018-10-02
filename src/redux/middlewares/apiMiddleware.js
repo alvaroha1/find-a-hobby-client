@@ -31,25 +31,30 @@ export default store => next => action => {
     method: method || 'GET',
     body,
     headers
-  })
-    .then(response => response.json())
-    .then(response => {
-      return response;
-    })
+  }).then(response => response.json())
     .then(data => {
-      store.dispatch({
-        ...action,
-        type: `${action.type}_SUCCESS`,
-        api: undefined,
-        data
-      });
+      if(data.error) {
+        store.dispatch({
+          ...action,
+          type: `${action.type}_ERROR`,
+          api: undefined,
+          error: data.error
+        });
+      } else {
+        store.dispatch({
+          ...action,
+          type: `${action.type}_SUCCESS`,
+          api: undefined,
+          data
+        });
+      }
     })
     .catch(error => {
       store.dispatch({
         ...action,
         type: `${action.type}_FAILURE`,
         api: undefined,
-        error
+        error: error
       });
     });
 };

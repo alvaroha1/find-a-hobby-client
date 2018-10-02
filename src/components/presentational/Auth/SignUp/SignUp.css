@@ -4,20 +4,11 @@
 
 .App__signup {
   height: 100vh;
-  margin: 25vh 10vw 10vh 10vw;
+  margin: 10vh 10vw 10vh 10vw;
 }
 
 .App__signup__title {
   color: #EE566D;
-}
-
-.App__signup__background {
-  position: fixed;
-  top: -15vh;
-  left: -80vw;
-  order: -1;
-  height: 40vh;
-  width: 200vw;
 }
 
 .App__signup_form {
@@ -25,8 +16,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 50vh;
-  margin-bottom: 10vh;
+  height: 60vh;
+  margin-bottom: 15vh;
 }
 
 .App__signup_form__input {
@@ -69,6 +60,14 @@
   border: none;
   border-radius: 5px;
   padding: 5px;
+}
+
+.errors {
+  position: sticky;
+  height: 20px;
+  bottom: 50px;
+  color: #EE566D;
+  font-size: 10px;
 }
 
 /*# sourceMappingURL=SignUp.css.map */

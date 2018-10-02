@@ -17,8 +17,8 @@ export default class SignIn extends React.Component {
     return (
       <div className="App__signin">
         <div className="App__signin__logo">Find a<br></br>hobby!</div>
-        <img className="App__signin__background" src={background}></img>
-        <h3 className="App__signin__title">LOG IN</h3>
+        <img className="App__signin__background" src={background} alt="background"></img>
+        <h3 className="App__signin__title">SIGN IN</h3>
         <form className="App__signin_form">
           <input
             type="text"
@@ -32,7 +32,7 @@ export default class SignIn extends React.Component {
             onChange={this.onHandle}
             placeholder="Password"
             className="App__signin_form__input"/>
-          <input className="App__signin_form__buttons__button__login" value="Login" type="submit"></input>
+          <input className="App__signin_form__buttons__button__login" value="Sign In" type="submit"></input>
           <a className="App__signin_form__buttons__forgot" >Forgot password?</a>
 
           <div className="App__signin_form__buttons__signup">
