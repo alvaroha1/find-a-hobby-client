@@ -115,21 +115,12 @@ export class CreateAHobby extends React.Component {
       <div className="App__createahobby">
         <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
-<<<<<<< HEAD
           <input 
             className="App__createahobby__form__title" 
             type="text" 
             name="name" 
             placeholder="Name"
             value={this.state.name}
-=======
-          <input
-            className="App__createahobby__form__title"
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={this.state.title}
->>>>>>> refs/remotes/origin/master
             onChange={this.handleInputChange} />
           <input
             className="App__createahobby__form__description"
@@ -138,16 +129,12 @@ export class CreateAHobby extends React.Component {
             placeholder="Description"
             value={this.state.description}
             onChange={this.handleInputChange} />
-<<<<<<< HEAD
           {/* <input 
             type="file" 
             name="myFile"
             value={this.state.picture}
             onChange={this.handleInputChange}/> */}
         {/* <div 
-=======
-        {/* <div
->>>>>>> refs/remotes/origin/master
           className="App__createahobby__form__selectimage"
           name="pictureURL"
           placeholder="Picture e.g. https://vegan.me/soup.jpg"
@@ -195,7 +182,6 @@ export class CreateAHobby extends React.Component {
              onChange={this.handleBarsChange} />
             <br />
           </div>
-<<<<<<< HEAD
           {/* <h3>Proceed to the next step</h3> */}
           <Link to='/pictures'>
             <input 
@@ -204,21 +190,12 @@ export class CreateAHobby extends React.Component {
             value="Next"
             onClick={this.addHobby}/>
             </Link>
-=======
-          <h3>Create your Hobby</h3>
-              <input
-              className="App__createahobby__form__post"
-              type="submit"
-              name="Create!"
-              onClick={this.addHobby}/>
->>>>>>> refs/remotes/origin/master
         </form>
       </div>
     );
   }
 }
 
-<<<<<<< HEAD
 const mapStateToProps = (state) => ({
 
 });
@@ -228,6 +205,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateAHobby);
-=======
-{/* <Link to='/pictures'></Link> */}
->>>>>>> refs/remotes/origin/master
