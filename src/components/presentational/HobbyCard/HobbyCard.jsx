@@ -16,7 +16,7 @@ export default class HobbyCard extends React.Component {
           <div className="App__hobbycard__imagecanvas">
             <img
               className="App__hobbycard__imagecanvas__picture"
-              src={this.props.hobby.pictures[0].thumbnail}
+              src={this.props.hobby.pictures}
               alt="Hobby">
             </img>
           </div>

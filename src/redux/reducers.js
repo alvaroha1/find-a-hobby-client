@@ -5,13 +5,13 @@ const initalState = {
   userId: '',
   hobbyId: '',
   userData: {},
+  token: '',
   errors: {
     signup: '',
   },
   success: {
     signup: false,
-  },
-  token: ''
+  }
 };
 
 const reducer = (state = initalState, action) => {
@@ -26,7 +26,8 @@ const reducer = (state = initalState, action) => {
   case 'LOG_IN_SUCCESS':
     return {
       ...state,
-      token: action.data.token
+      token: action.data.token,
+      userData: action.data.userData
     };
 
   case 'NEW_USER_ERROR':
@@ -66,7 +67,7 @@ const reducer = (state = initalState, action) => {
   case 'POSTHOBBY_SUCCESS':
     return {
       ...state,
-      coompletedHobby: action.data
+      completedHobby: action.data
     };
 
   case 'CREATEHOBBY':
@@ -77,7 +78,19 @@ const reducer = (state = initalState, action) => {
 
   case 'LOG_OUT':
     return {
-      state: null
+      hobbies: [],
+      currentHobby: {},
+      completedHobby: {},
+      userId: '',
+      hobbyId: '',
+      userData: {},
+      token: '',
+      errors: {
+        signup: '',
+      },
+      success: {
+        signup: false,
+      }
     };
 
   case 'FAVORITES_SUCCESS':

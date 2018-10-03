@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const url_1 ='https://api.unsplash.com/search/photos/?query=';
 const url_2 ='%27&client_id=';
-const API_ID ='e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7'; 
+const API_ID ='e2c1363aa4fd8dd817c6faab14b0c557627620aa6a303b19ddd68932f62a2cc7';
 
 class PicturesBrowser extends Component {
   constructor(props) {
@@ -40,10 +40,11 @@ class PicturesBrowser extends Component {
       name: this.props.currentHobby.name,
       description: this.props.currentHobby.description,
       picture: this.state.selectedPicture,
-      tags: this.props.currentHobby.tags 
+      tags: this.props.currentHobby.tags
     }
-    this.props.postHobby(completedHobby);
     console.log(completedHobby);
+    this.props.postHobby(completedHobby);
+
   }
 
   render() {
@@ -52,28 +53,28 @@ class PicturesBrowser extends Component {
       <div className="App__createahobby">
         <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
-        <div 
+        <div
           className="App__createahobby__form__selectimage"
           name="pictureURL">
             <div className="flexbin">
               {this.state.imageURLS.map(url => <img src={url} key={url} onClick={() => this.addPicture(url)}/>)}
             </div>
           </div>
-  
+
           <h3>Choose a Picture</h3>
-          <Link to='/create'> 
-            <input 
-              className="App__createahobby__form__post" 
-              type="submit" 
+          <Link to='/create'>
+            <input
+              className="App__createahobby__form__post"
+              type="submit"
               value="Go Back"/>
           </Link>
           <Link to='/'>
-            <input 
-            className="App__createahobby__form__post" 
-            type="submit" 
+            <input
+            className="App__createahobby__form__post"
+            type="submit"
             value="Create Hobby"
             onClick={this.fetchHobby}/>
-          </Link>      
+          </Link>
         </form>
       </div>
     )
@@ -96,4 +97,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PicturesBrowser);
-

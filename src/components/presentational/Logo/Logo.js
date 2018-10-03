@@ -11,17 +11,22 @@ const search = require('../../../assets/search.svg');
 const logout = require('../../../assets/logout.svg');
 
 
-
-
 export class Logo extends React.Component {
+
+  logUserOut = () => {
+    this.props.logout();
+    this.props.history.push('/signin');
+  }
+
   render () {
     return (
       <div className="App__logo">
         <div className="App__logo__profile">
           <div className="App__logo__profile__picture"><img src={profile_picture} alt="Profile"/></div>
           <div className="App__logo__profile__userinfo">
-            <div className="App__logo__profile__userinfo__name">Welcome, Joseph</div>
-            <div className="App__logo__profile__userinfo__hobbies">2 Hobbies</div>
+            <div className="App__logo__profile__userinfo__name">Welcome, {this.props.user.name}</div>
+            <div className="App__logo__profile__userinfo__hobbies">
+              {this.props.user.likedHobbies? this.props.user.likedHobbies.length : ''} Hobbies</div>
             <div className="App__logo__profile__userinfo__city">Barcelona</div>
           </div>
         </div>
@@ -52,13 +57,11 @@ export class Logo extends React.Component {
           </li>
         </ul>
         <div className="App__logo__logout">
-          <Link to='/signin'>
             <img className="App__logo__logout--icon"
               src={logout}
               alt="logout"
-              onClick={this.props.logout} ></img>
+              onClick={this.logUserOut} ></img>
             Logout
-          </Link>
         </div>
         <div className="App__logo__footer"></div>
       </div>
@@ -67,6 +70,7 @@ export class Logo extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  user: state.userData
 });
 
 
