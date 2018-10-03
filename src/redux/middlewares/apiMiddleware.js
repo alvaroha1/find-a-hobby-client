@@ -9,6 +9,7 @@ export default store => next => action => {
   const defaultHeaders = {};
   if (body) {
     body = JSON.stringify(body);
+    console.log('body',body)
     defaultHeaders['Content-type'] = 'application/json';
   }
 

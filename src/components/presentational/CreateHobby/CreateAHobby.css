@@ -1,5 +1,12 @@
 .App__createahobby__form {
   margin: 0 10vw 0 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App__createahobby__form h4 {
+  color: #9B9B9B;
 }
 
 .App__createahobby__form__title, .App__createahobby__form__description {
@@ -11,6 +18,10 @@
   border-radius: 12.5px;
   background-color: #f4f4f4;
   margin-bottom: 10px;
+}
+
+.App__createahobby__form__description {
+  margin-bottom: 10vh;
 }
 
 .App__createahobby__form__selectimage {
@@ -27,6 +38,29 @@
   color: white;
   padding: 5px;
   border-radius: 2.5px;
+  margin: 20vh;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  position: absolute;
+  -webkit-appearance: none;
+  background: #000;
+  height: 18px;
+  width: 18px;
+  margin-top: -8px;
+  border-radius: 99px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 4px;
+  background: #EE566D;
 }
 
 /*# sourceMappingURL=CreateAHobby.css.map */

@@ -53,28 +53,27 @@ class PicturesBrowser extends Component {
       <div className="App__createahobby">
         <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
-        <div
-          className="App__createahobby__form__selectimage"
-          name="pictureURL">
+          <div className="App__createahobby__form__selectimage" name="pictureURL">
             <div className="flexbin">
               {this.state.imageURLS.map(url => <img src={url} key={url} onClick={() => this.addPicture(url)}/>)}
             </div>
           </div>
-
           <h3>Choose a Picture</h3>
-          <Link to='/create'>
-            <input
+          <div className="App__createahobby__buttons">
+            <Link to='/create'>
+              <input
+                className="App__createahobby__form__post"
+                type="submit"
+                value="Go Back"/>
+            </Link>
+            <Link to='/'>
+              <input
               className="App__createahobby__form__post"
               type="submit"
-              value="Go Back"/>
-          </Link>
-          <Link to='/'>
-            <input
-            className="App__createahobby__form__post"
-            type="submit"
-            value="Create Hobby"
-            onClick={this.fetchHobby}/>
-          </Link>
+              value="Create Hobby"
+              onClick={this.fetchHobby}/>
+            </Link>
+          </div>
         </form>
       </div>
     )

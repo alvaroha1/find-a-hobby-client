@@ -9,7 +9,7 @@ export default class HobbyMiniCard extends React.Component {
     return (
       <div className="App__hobbyminicard">
         <div className="App__hobbyminicard__image">
-          <img src={this.props.hobby.pictures[0].thumbnail}
+          <img src={this.props.hobby.pictures}
             alt="Hobby"></img>
         </div>
         <div className="App__hobbyminicard__display">
