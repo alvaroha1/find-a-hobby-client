@@ -115,13 +115,12 @@ export class CreateAHobby extends React.Component {
       <div className="App__createahobby">
         <Navbar title="Post a Hobby"></Navbar>
         <form className="App__createahobby__form">
-          <input
-            className="App__createahobby__form__title"
-            type="text"
-            name="name"
+          <input 
+            className="App__createahobby__form__title" 
+            type="text" 
+            name="name" 
             placeholder="Name"
             value={this.state.name}
-
             onChange={this.handleInputChange} />
           <input
             className="App__createahobby__form__description"
@@ -130,12 +129,12 @@ export class CreateAHobby extends React.Component {
             placeholder="Description"
             value={this.state.description}
             onChange={this.handleInputChange} />
-          {/* <input
-            type="file"
+          {/* <input 
+            type="file" 
             name="myFile"
             value={this.state.picture}
             onChange={this.handleInputChange}/> */}
-        {/* <div
+        {/* <div 
           className="App__createahobby__form__selectimage"
           name="pictureURL"
           placeholder="Picture e.g. https://vegan.me/soup.jpg"

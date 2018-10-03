@@ -1,7 +1,7 @@
 const initalState = {
   hobbies: [],
   currentHobby: {},
-  completeHobby: {},
+  completedHobby: {},
   userId: '',
   hobbyId: '',
   userData: {},
@@ -56,19 +56,18 @@ const reducer = (state = initalState, action) => {
       hobbyId: action.data.hobbyId
     };
 
-
   case 'POSTHOBBY_SUCCESS':
     return {
       ...state,
-      coompleteHobby: action.data
+      coompletedHobby: action.data
     };
 
   case 'CREATEHOBBY':
     return {
       ...state,
       currentHobby: action.data
-    };
-
+    };  
+     
   case 'FAVORITES_SUCCESS':
     return {
       ...state,
