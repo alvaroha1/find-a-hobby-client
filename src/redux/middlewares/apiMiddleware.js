@@ -12,7 +12,7 @@ export default store => next => action => {
     defaultHeaders['Content-type'] = 'application/json';
   }
 
-  const token = store.getState().authentication ? store.getState().authentication.token : undefined;
+  const token = store.getState() ? store.getState().token : undefined;
   if (token) {
     defaultHeaders.Authorization = `Bearer ${token}`;
   }
@@ -30,7 +30,7 @@ export default store => next => action => {
   fetch(`${BASE_URL}${endpoint}`, {
     method: method || 'GET',
     body,
-    headers
+    headers,
   }).then(response => response.json())
     .then(data => {
       if(data.error) {

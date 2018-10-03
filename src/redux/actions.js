@@ -3,6 +3,8 @@ export const logIn = apiInfo => ({
   api: {
     endpoint: apiInfo.endpoint,
     method: apiInfo.method,
+    body: apiInfo.body,
+    headers: apiInfo.headers
   }
 });
 
@@ -63,6 +65,16 @@ export const Favorites = apiInfo => ({
 
 export const newUser = apiInfo => ({
   type: 'NEW_USER',
+  api: {
+    endpoint: apiInfo.endpoint,
+    method: apiInfo.method,
+    body: apiInfo.body,
+    headers: apiInfo.headers
+  },
+});
+
+export const logout = apiInfo => ({
+  type: 'LOG_OUT',
   api: {
     endpoint: apiInfo.endpoint,
     method: apiInfo.method,

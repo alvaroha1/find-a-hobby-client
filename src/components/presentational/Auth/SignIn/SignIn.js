@@ -31,6 +31,9 @@ export class SignIn extends React.Component {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
       this.props.logUserIn(header)
+      this.props.history.push('/')
+
+
     }
 
 

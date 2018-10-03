@@ -48,11 +48,8 @@ export class SignUp extends React.Component {
       } else if (this.props.errors === 'User already exist') {
         this.setState({error: { username: 'User already exist'}});
       } else {
-        this.props.createNewUser(this.state);
-        console.log(this.props)
-        if (this.props.success === true) {
-          this.props.history.push('/signin');
-        }
+        this.props.createNewUser(this.state)
+        this.props.history.push('/signin');
       }
     }
   }

@@ -14,6 +14,9 @@ export class Discover extends Component {
 }
 
   render() {
+    if (this.props.hobbies) {
+
+    }
     let hobbies = this.props.hobbies.map(card => {
       return <HobbyCard
         hobby={card}

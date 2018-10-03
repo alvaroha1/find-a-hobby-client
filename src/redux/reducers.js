@@ -10,7 +10,8 @@ const initalState = {
   },
   success: {
     signup: false,
-  }
+  },
+  token: ''
 };
 
 const reducer = (state = initalState, action) => {
@@ -20,6 +21,12 @@ const reducer = (state = initalState, action) => {
     return {
       ...state,
       hobbies: action.data
+    };
+
+  case 'LOG_IN_SUCCESS':
+    return {
+      ...state,
+      token: action.data.token
     };
 
   case 'NEW_USER_ERROR':
@@ -66,8 +73,13 @@ const reducer = (state = initalState, action) => {
     return {
       ...state,
       currentHobby: action.data
-    };  
-     
+    };
+
+  case 'LOG_OUT':
+    return {
+      state: null
+    };
+
   case 'FAVORITES_SUCCESS':
     return {
       ...state,

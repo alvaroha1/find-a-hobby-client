@@ -1,6 +1,7 @@
 import React from 'react';
 import './Logo.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const profile_picture = require('../../../assets/profile_picture.png');
 const compass = require('../../../assets/compass.svg');
@@ -10,7 +11,9 @@ const search = require('../../../assets/search.svg');
 const logout = require('../../../assets/logout.svg');
 
 
-export default class Logo extends React.Component {
+
+
+export class Logo extends React.Component {
   render () {
     return (
       <div className="App__logo">
@@ -49,8 +52,11 @@ export default class Logo extends React.Component {
           </li>
         </ul>
         <div className="App__logo__logout">
-          <Link to='/signout'>
-            <img className="App__logo__logout--icon" src={logout} alt="logout"></img>
+          <Link to='/signin'>
+            <img className="App__logo__logout--icon"
+              src={logout}
+              alt="logout"
+              onClick={this.props.logout} ></img>
             Logout
           </Link>
         </div>
@@ -59,3 +65,15 @@ export default class Logo extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+});
+
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch({
+    type: 'LOG_OUT',
+  })
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Logo);
