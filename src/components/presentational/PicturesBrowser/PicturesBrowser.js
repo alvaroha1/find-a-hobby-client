@@ -85,23 +85,15 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  postHobby: () => dispatch({
+  postHobby: (data) => dispatch({
     type: 'POSTHOBBY',
     api: {
       method: 'POST',
-      endpoint: '/postHobby'
+      endpoint: '/postHobby',
+      body: data
     }
   })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PicturesBrowser);
 
-
-//TO Do's
-
-//accedir props - done via arol
-//arreglar query - done fucking naming
-//fer feth correctament -done
-//renderitzar fotos -/done
-//afegir fotos hobby - onClick?-done
-//posthobby 
