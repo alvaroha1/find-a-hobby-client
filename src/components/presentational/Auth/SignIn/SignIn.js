@@ -1,18 +1,44 @@
 import React from 'react';
 import './SignIn.css';
 import { Link } from 'react-router-dom';
-import background from'../../../../assets/login_background.png';
+import background from'../../../../assets/login_background2.png';
+import { connect } from 'react-redux';
 
+export class SignIn extends React.Component {
 
-export default class SignIn extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
 
-  handleChange(e){
+  handleChange = (e) =>{
     this.setState(
       {
         [e.target.name]: e.target.value,
       }
     );
   }
+
+  handleClick = (e) => {
+      e.preventDefault();
+    if (this.state.username && this.state.password) {
+      const encoded = btoa(`${this.state.username}:${this.state.password}`);
+      const header = {
+        Authorization: 'Basic ' + encoded,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+      this.props.logUserIn(header)
+    }
+
+
+
+  }
+
+
+
   render() {
     return (
       <div className="App__signin">
@@ -23,16 +49,19 @@ export default class SignIn extends React.Component {
           <input
             type="text"
             name="username"
-            onChange={this.onHandle}
+            value={this.state.username}
+            onChange={this.handleChange}
             placeholder="User Name"
             className="App__signin_form__input"/>
           <input
-            type="text"
+            type="password"
+            autoComplete="password"
             name="password"
-            onChange={this.onHandle}
+            value={this.state.password}
+            onChange={this.handleChange}
             placeholder="Password"
             className="App__signin_form__input"/>
-          <input className="App__signin_form__buttons__button__login" value="Sign In" type="submit"></input>
+          <input className="App__signin_form__buttons__button__login" value="Sign In" type="submit" onClick={this.handleClick}></input>
           <a className="App__signin_form__buttons__forgot" >Forgot password?</a>
 
           <div className="App__signin_form__buttons__signup">
@@ -46,3 +75,19 @@ export default class SignIn extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+});
+
+
+const mapDispatchToProps = dispatch => ({
+  logUserIn: (header) => dispatch({
+    type: 'LOG_IN',
+    api: {
+      endpoint: '/signin',
+      headers: header
+    },
+  })
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

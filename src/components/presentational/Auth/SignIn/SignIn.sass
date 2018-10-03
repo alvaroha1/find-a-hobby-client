@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster')
+@import url('https://fonts.googleapis.com/css?family=Pacifico')
 
 .App__signin
   height: 100vh
-  margin: 40vh 10vw 10vh 10vw
+  margin: 30vh 10vw 10vh 10vw
+  overflow: hidden
 
 .App__signin__logo
   width: 100vw
@@ -10,17 +11,18 @@
   position: absolute
   top: 5vh
   left: 0
-  font-family: Lobster
+  font-family: Pacifico
   color: white
   font-size: 50px
-  line-height: 40px
+  line-height: 50px
+  overflow: visible
 
 .App__signin__background
   position: fixed
   top: -15vh
-  left: -80vw
-  order: -1
-  height: 60vh
+  left: -50vw
+  z-index: -1
+  height: 45vh
   width: 200vw
 
 .App__signin__title
@@ -31,7 +33,7 @@
   flex-direction: column
   align-items: center
   justify-content: space-around
-  height: 50vh
+  height: 55vh
 
 
 .App__signin_form__input

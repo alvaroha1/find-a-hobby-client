@@ -1,10 +1,7 @@
-* {
-  border: solid 1 black;
-}
-
 .App__signup {
   height: 100vh;
-  margin: 10vh 10vw 10vh 10vw;
+  margin: 5vh 10vw 5vh 10vw;
+  overflow: hidden;
 }
 
 .App__signup__title {
@@ -24,7 +21,6 @@
   border: none;
   border-bottom: solid 0.5px #dbdbdb;
   font-size: 15px;
-  margin-bottom: 5vh;
 }
 
 .App__signup_form__input::placeholder {
@@ -45,6 +41,7 @@
   border-radius: 5px;
   width: 100%;
   padding: 10px;
+  margin-top: 5vh;
 }
 
 .App__signup_form__buttons__account {

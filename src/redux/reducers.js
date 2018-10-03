@@ -7,6 +7,9 @@ const initalState = {
   userData: {},
   errors: {
     signup: '',
+  },
+  success: {
+    signup: false,
   }
 };
 
@@ -25,6 +28,15 @@ const reducer = (state = initalState, action) => {
       errors:{
         ...state.errors,
         signup: action.error
+      }
+    };
+
+  case 'NEW_USER_SUCCESS':
+    return {
+      ...state,
+      success:{
+        ...state.success,
+        signup: true
       }
     };
 
