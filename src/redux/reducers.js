@@ -30,6 +30,13 @@ const reducer = (state = initalState, action) => {
       userData: action.data.userData
     };
 
+  case 'DASHBOARD_SUCCESS':
+    return {
+      ...state,
+      token: action.data.token,
+      userData: action.data.userData
+    };
+
   case 'NEW_USER_ERROR':
     return {
       ...state,

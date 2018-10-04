@@ -7,7 +7,7 @@ export default class HobbyMiniCard extends React.Component {
 
   render() {
     return (
-      <div className="App__hobbyminicard">
+      <a className="App__hobbyminicard" href={'http://www.google.com/search?q=How+to+'+this.props.hobby.name}>
         <div className="App__hobbyminicard__image">
           <img src={this.props.hobby.pictures}
             alt="Hobby"></img>
@@ -15,21 +15,20 @@ export default class HobbyMiniCard extends React.Component {
         <div className="App__hobbyminicard__display">
           <div className="App__hobbyminicard__display__info">
             <div className="App__hobbyminicard__display__info__hobby">{this.props.hobby.name}</div>
-            <div className="App__hobbyminicard__display__info__description">{this.props.hobby.description}</div>
           </div>
           <div className="App__hobbyminicard__display__stats">
             <div className="App__hobbyminicard__display__stats__bars">
               <div
                 className="App__hobbyminicard__display__stats__bars__exercise"
-                style={{height: this.props.hobby.tags[1].average/2 + 5}}>
+                style={{height: this.props.hobby.tags[1].average/3 + 5}}>
                 <div className="App__hobbyminicard__display__stats__letters">e</div>
               </div>
               <div className="App__hobbyminicard__display__stats__bars__money"
-                style={{height: this.props.hobby.tags[0].average/2 + 5}}>
+                style={{height: this.props.hobby.tags[0].average/3 + 5}}>
                 <div className="App__hobbyminicard__display__stats__letters">m</div>
               </div>
               <div className="App__hobbyminicard__display__stats__bars__creativity"
-                style={{height: this.props.hobby.tags[2].average/2 + 5}}>
+                style={{height: this.props.hobby.tags[2].average/3 + 5}}>
                 <div className="App__hobbyminicard__display__stats__letters">c</div>
               </div>
             </div>
@@ -39,7 +38,7 @@ export default class HobbyMiniCard extends React.Component {
           </div>
         </div>
 
-      </div>
+      </a>
     );
   }
 }

@@ -1,7 +1,3 @@
-* {
-  border: solid 1 black;
-}
-
 .App__hobycard__card {
   height: stretch;
   overflow: hidden;
@@ -10,6 +6,11 @@
 .App__hobbycard__imagecanvas__picture {
   width: 100vw;
   margin-top: 5vh;
+}
+
+.App__hobbycard__imagecanvas {
+  height: 45vh;
+  overflow: hidden;
 }
 
 .App__hobycard__card {

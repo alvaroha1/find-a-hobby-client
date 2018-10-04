@@ -3,7 +3,7 @@ import './Logo.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const profile_picture = require('../../../assets/profile_picture.png');
+const profile_picture = require('../../../assets/profile_picture_william.jpg');
 const compass = require('../../../assets/compass.svg');
 const heart = require('../../../assets/heart.svg');
 const post = require('../../../assets/post.svg');
@@ -12,6 +12,10 @@ const logout = require('../../../assets/logout.svg');
 
 
 export class Logo extends React.Component {
+
+  componentDidMount() {
+    this.props.dashboard()
+  }
 
   logUserOut = () => {
     this.props.logout();
@@ -77,6 +81,12 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch({
     type: 'LOG_OUT',
+  }),
+  dashboard: () => dispatch({
+    type: 'DASHBOARD',
+    api: {
+      endpoint: '/'
+    }
   })
 });
 

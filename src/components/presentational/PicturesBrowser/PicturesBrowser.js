@@ -50,25 +50,25 @@ class PicturesBrowser extends Component {
   render() {
 
     return (
-      <div className="App__createahobby">
+      <div className="App__picturebrowser">
         <Navbar title="Post a Hobby"></Navbar>
-        <form className="App__createahobby__form">
-          <div className="App__createahobby__form__selectimage" name="pictureURL">
+        <form className="App__picturebrowser__form">
+          <div className="App__picturebrowser__form__selectimage" name="pictureURL">
             <div className="flexbin">
-              {this.state.imageURLS.map(url => <img src={url} key={url} onClick={() => this.addPicture(url)}/>)}
+              {this.state.imageURLS.map(url => <img alt="hobby" src={url} key={url} onClick={() => this.addPicture(url)}/>)}
             </div>
           </div>
           <h3>Choose a Picture</h3>
-          <div className="App__createahobby__buttons">
+          <div className="App__picturebrowser__buttons">
             <Link to='/create'>
               <input
-                className="App__createahobby__form__post"
+                className="App__picturebrowser__form__post"
                 type="submit"
                 value="Go Back"/>
             </Link>
             <Link to='/'>
               <input
-              className="App__createahobby__form__post"
+              className="App__picturebrowser__form__post"
               type="submit"
               value="Create Hobby"
               onClick={this.fetchHobby}/>

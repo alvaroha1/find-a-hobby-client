@@ -8,6 +8,17 @@ export const logIn = apiInfo => ({
   }
 });
 
+export const dashboard = apiInfo => ({
+  type: 'DASHBOARD',
+  api: {
+    endpoint: apiInfo.endpoint,
+    method: apiInfo.method,
+    body: apiInfo.body,
+    headers: apiInfo.headers
+  }
+});
+
+
 export const Discover = apiInfo => ({
   type: 'DISCOVER',
   api: {

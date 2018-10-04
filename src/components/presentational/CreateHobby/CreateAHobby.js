@@ -157,7 +157,7 @@ export class CreateAHobby extends React.Component {
            <br />
            <label className='fit-label'>
              {/* <i className="fas fa-football-ball"></i> */}
-             <h4>Fit</h4>
+             <h4>Exercise</h4>
            </label>
            <input
              name="fit"

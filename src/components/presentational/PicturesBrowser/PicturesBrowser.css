@@ -1,9 +1,9 @@
-.App__createahobby {
+.App__picturebrowser {
   overflow: hidden;
   height: 100vh;
 }
 
-.App__createahobby__form {
+.App__picturebrowser__form {
   height: stretch;
   width: 100vw;
   display: flex;
@@ -12,25 +12,32 @@
   margin: 0;
 }
 
-.App__createahobby__form__selectimage {
+.App__picturebrowser__form__selectimage {
   overflow: scroll;
   scroll-behavior: smooth;
   width: 50vh;
   height: 75vh;
   margin: 0;
+  border-radius: 2vw;
 }
 
-.App__createahobby h3 {
+.App__picturebrowser h3 {
   color: #9B9B9B;
   font-size: 15px;
   margin: 5;
 }
 
-.App__createahobby__form__post {
+.App__picturebrowser__form__post {
   margin: 0 5px 0 0;
+  background-color: #EE566D;
+  font-size: 15px;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 2.5px;
 }
 
-.App__createahobby__buttons {
+.App__picturebrowser__buttons {
   display: flex;
   flex-direction: row;
   margin: 0;
@@ -41,11 +48,8 @@
 
 .flexbin img {
   cursor: pointer;
-}
-
-.flexbin img.selected {
-  border: solid 1px blue;
-  border-color: #33B8D8;
+  width: 100%;
+  border-radius: 2vw;
 }
 
 /*# sourceMappingURL=PicturesBrowser.css.map */
