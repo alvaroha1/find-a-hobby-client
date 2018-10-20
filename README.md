@@ -24,9 +24,8 @@ The original Find-A-Hobby was a great fit for us as a team because we both like 
 
 ## Screenshots
 
-<p align="center">
-  <img src="https://imgur.com/NuDk8QM.png" />
-</p>
+![dashboard](https://github.com/alvaroha1/sehnsucht/blob/master/assets/screenshot1.JPG)
+![select a picture](https://github.com/alvaroha1/sehnsucht/blob/master/assets/screenshot2.JPG)
 
 ## Getting started
 
