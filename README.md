@@ -20,7 +20,7 @@ The original Find-A-Hobby was a great fit for us as a team because we both like 
 ### 2.0
 * SASS
 * Unsplash API
-
+* Redux
 
 
 ## Recommendation Mechanics
