@@ -1,60 +1,32 @@
-<p align="center">
-  <a href="http://findahobbyapp.com/">
-  <img src="https://imgur.com/W3jHOFM.png"/>
-  </a>
-</p>
+# Find-a-Hobby 2.0
 
-> A web app that will help you discover the most amazing thing to spend your leisure time on.
+Find-a-Hobby 2.0 contributed in an Open Source project with Rodrigo Sanchez [Github]( https://github.com/RodriFS/).
+You will need ([Find a Hobby Client]( https://github.com/alvaroha1/find-a-hobby-client)) as well.
 
-## The idea
-> Someone said: 
-<p>"Find three hobbies you love: one to make you <b>money</b>, one to keep you <b>in shape</b> and one to be <b>creative</b>".</p>
+## Idea
+We decided to remade the whole look of the application and focus on improving the user experience.
 
-> But there is a problem: with all the different cool things that people do in the world and the little time we have available, it is impossible to try every hobby out there...
-> So, how can we find the best new thing?
-<p><b>find a Hobby!</b> is a collaborative crowdsourced platform where people can:
-  <ul>
-  <li> Post their favourite hobby.</li>
-  <li> Like or dislike hobbies posted by other users.</li>
-  <li> Get recommended hobbies based on their previous liked hobbies.</li>
-  </ul>
-</p>
+## Motivation
+The main objective of this project was to take an already existing project and continue working on it.
+The original Find-A-Hobby was a great fit for us as a team because we both like the original idea but at the same time we thought we could take it to a whole new level.
 
-## Recommendation Mechanics
-> The app uses a [recommendation engine](https://github.com/guymorita/recommendationRaccoon) to provide users with hobbies based on their previous actions. 
-> It works like this: 
-<ol>
- <li>User 'A' likes hobbies 1, 2 and 3.</li> 
- <li>The app stores a relation between this 3 hobbies. </li>
- <li>User 'B' likes hobbies 1 and 2. </li>
- <li>The app will recommend hobby 3 to user 'B', because it knows that there is a common relation between hobbies 1, 2 and 3.</li>
-</ol>
-<br/>
-<p>
-* More people like and dislike hobbies -> better recommendations!
-<br/>
-* <b>The app doesn't store any private information about the user</b>, only anonymous relations between sessions and hobbies. That's why there is not a need to register or even to put your e-mail to use it!
- </p>
+## Tech Stack
 
-## Hobby Mechanics
-> When you like a hobby, it will appear in your 'Liked' section. In there, just tap on it to get redirected to a tutorial where you will learn the first steps on how to get started with this activity.
-<p align="center">
-  <img src="https://imgur.com/LUqSu42.png" />
-  <img src="https://imgur.com/lgHGzWD.png" />
-  <img src="https://imgur.com/s6kTZeh.png" />
-</p>
+### 1.0
+* [React](https://github.com/facebook/react) - Front end library for building user interfaces
+* [Bootstrap](https://github.com/twbs/bootstrap) - Framework for UI elements.
+* [Onsenui](https://github.com/OnsenUI/OnsenUI) - Mobile friendly framework for responsive elements.
+* [Font Awesome](https://fontawesome.com/) - Icons library. Used for the football ball, dollar sign and ballon icons.
 
-## Money, Exercise, Creativity
-> Every hobby will have a background split in three colours. Each colour represents the proportion of this three entities that the hobby can provide you with. Remember:"Find three hobbies you love: one to make you <b>money</b>, one to keep you <b>in shape</b> and one to be <b>creative</b>".
-
-## Posting a hobby
-> This app is 100% crowdsourced and collaborative. It works with the hobbies that users post. So if you have a cool activity and want to share it with the world, just go to the 'Post' section and input the name, a short description, a link to a picture and a link to a nice get started tutorial of the hobby!
+### 2.0
+* SASS
+* Unsplash API
+* Redux
 
 ## Screenshots
-
-<p align="center">
-  <img src="https://imgur.com/NuDk8QM.png" />
-</p>
+![login](https://github.com/alvaroha1/find-a-hobby-server/blob/master/assets/sc0.png)
+![dashboard](https://github.com/alvaroha1/find-a-hobby-server/blob/master/assets/sc1.png)
+![select a picture](https://github.com/alvaroha1/find-a-hobby-server/blob/master/assets/sc2.png)
 
 ## Getting started
 
