@@ -3,10 +3,8 @@
 Contributed in an Open Source project with Rodrigo Sanchez [Github]( https://github.com/RodriFS/).
 You will need ([Find a Hobby Server]( https://github.com/alvaroha1/find-a-hobby-server)) as well.
 
-## Idea
-We decided to remade the whole look of the application and focus on improving the user experience.
-
 ## Motivation
+We decided to remade the whole look of the application and focus on improving the user experience.
 The main objective of this project was to take an already existing project and continue working on it.
 The original Find-A-Hobby was a great fit for us as a team because we both like the original idea but at the same time we thought we could take it to a whole new level.
 
@@ -52,37 +50,10 @@ $ npm run main
 Now you will be able to post and like hobbies with the deployed production database. 
 
 If you want to use a clean local and fast database (recommended for development): 
-1. start development server following instructions of https://github.com/jportella93/find-a-hobby-server
+1. start development server following instructions of https://github.com/alvaroha1/find-a-hobby-server
 2. In /src/lib/apiClient.js, change the variable URL to point to your IP address followed by the port where you are runnning the server. For example: const URL = 'http://192.168.1.191:3000'
 
-## Built with
-
-* [React](https://github.com/facebook/react) - Front end library for building user interfaces
-* [Bootstrap](https://github.com/twbs/bootstrap) - Framework for UI elements.
-* [Onsenui](https://github.com/OnsenUI/OnsenUI) - Mobile friendly framework for responsive elements.
-* [Font Awesome](https://fontawesome.com/) - Icons library. Used for the football ball, dollar sign and ballon icons.
-
-
-## Contributing
-
-Any contribution is welcome! UI improvements, features... you name it! Just fork the repository and go nuts, then submit a pull request pointing to this repo.
-
-Some ideas i'm planning to do: 
-  - Implement state managment with redux.
-  - Responsiveness: Make more desktop friendly.
-  - Feature: let users vote on hobby characteristics. 
-  - Feature: Comment on hobbies. 
-  - Feature: User can find and post where this activities take place near them with geolocation. 
-  - Feature: Geoplace where this activities take place near the user.
-  - Feature: search hobbies by name.
-  - Feature: share hobbies by url.
-  - Feature: report hobby, put filter on 'bad' words.
-  - Feature: Statistics. Which hobbies are liked with this hobby, how many hobbies are in database...
-  
-... or any other idea!
-
-
-## Author
+## Original Author
 
 Jon Portella - [Github](https://github.com/jportella93) - [LinkedIn](https://www.linkedin.com/in/jonportella/) - [Twitter](https://twitter.com/jportella93)
 
