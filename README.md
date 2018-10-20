@@ -24,16 +24,16 @@ The original Find-A-Hobby was a great fit for us as a team because we both like 
 * Redux
 
 ## Screenshots
-![login](https://github.com/alvaroha1/find-a-hobby-server/blob/master/assets/sc0.png)
-![dashboard](https://github.com/alvaroha1/find-a-hobby-server/blob/master/assets/sc1.png)
-![select a picture](https://github.com/alvaroha1/find-a-hobby-server/blob/master/assets/sc2.png)
+![login](https://github.com/alvaroha1/find-a-hobby-client/blob/master/assets/sc0.png)
+![dashboard](https://github.com/alvaroha1/find-a-hobby-client/blob/master/assets/sc1.png)
+![select a picture](https://github.com/alvaroha1/find-a-hobby-client/blob/master/assets/sc2.png)
 
 ## Getting started
 
 1. Clone the repo
 
 ```
-$ git clone https://github.com/jportella93/find-a-hobby-client.git
+$ git clone https://github.com/alvaroha1/find-a-hobby-client.git
 $ cd find-a-hobby-client
 ```
 
