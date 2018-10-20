@@ -1,6 +1,6 @@
-# FIND-A-HOBBY 2.0
+# Find-a-Hobby 2.0
 
-FIND-A-HOBBY 2.0 contributed in an Open Source project with Rodrigo Sanchez ([Github]( https://github.com/RodriFS/).
+Find-a-Hobby 2.0 contributed in an Open Source project with Rodrigo Sanchez ([Github]( https://github.com/RodriFS/).
 
 ## Idea
 We decided to remade the whole look of the application and focus on improving the user experience.
