@@ -28,9 +28,11 @@ export class Logo extends React.Component {
         <div className="App__logo__profile">
           <div className="App__logo__profile__picture"><img src={profile_picture} alt="Profile"/></div>
           <div className="App__logo__profile__userinfo">
-            <div className="App__logo__profile__userinfo__name">Welcome, {this.props.user.name}</div>
+            <div className="App__logo__profile__userinfo__name">Welcome</div>
+            {/* <div className="App__logo__profile__userinfo__name">Welcome, {this.props.user.name}</div> */}
             <div className="App__logo__profile__userinfo__hobbies">
-              {this.props.user.likedHobbies? this.props.user.likedHobbies.length : ''} Hobbies</div>
+              Hobbies</div>
+              {/* {this.props.user.likedHobbies? this.props.user.likedHobbies.length : ''} Hobbies</div> */}
             <div className="App__logo__profile__userinfo__city">Barcelona</div>
           </div>
         </div>
