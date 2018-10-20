@@ -1,24 +1,27 @@
-<p align="center">
-  <a href="http://findahobbyapp.com/">
-  <img src="https://imgur.com/W3jHOFM.png"/>
-  </a>
-</p>
+# FIND-A-HOBBY 2.0
 
-> A web app that will help you discover the most amazing thing to spend your leisure time on.
+FIND-A-HOBBY 2.0 contributed in an Open Source project with Rodrigo Sanchez ([Github]( https://github.com/RodriFS/).
 
-## The idea
-> Someone said: 
-<p>"Find three hobbies you love: one to make you <b>money</b>, one to keep you <b>in shape</b> and one to be <b>creative</b>".</p>
+## Idea
+We decided to remade the whole look of the application and focus on improving the user experience.
 
-> But there is a problem: with all the different cool things that people do in the world and the little time we have available, it is impossible to try every hobby out there...
-> So, how can we find the best new thing?
-<p><b>find a Hobby!</b> is a collaborative crowdsourced platform where people can:
-  <ul>
-  <li> Post their favourite hobby.</li>
-  <li> Like or dislike hobbies posted by other users.</li>
-  <li> Get recommended hobbies based on their previous liked hobbies.</li>
-  </ul>
-</p>
+## Motivation
+The main objective of this project was to take an already existing project and continue working on it.
+The original Find-A-Hobby was a great fit for us as a team because we both like the original idea but at the same time we thought we could take it to a whole new level.
+
+## Tech Stack
+
+###1.0
+* [React](https://github.com/facebook/react) - Front end library for building user interfaces
+* [Bootstrap](https://github.com/twbs/bootstrap) - Framework for UI elements.
+* [Onsenui](https://github.com/OnsenUI/OnsenUI) - Mobile friendly framework for responsive elements.
+* [Font Awesome](https://fontawesome.com/) - Icons library. Used for the football ball, dollar sign and ballon icons.
+
+###2.0
+* SASS
+* Unsplash API
+
+
 
 ## Recommendation Mechanics
 > The app uses a [recommendation engine](https://github.com/guymorita/recommendationRaccoon) to provide users with hobbies based on their previous actions. 
