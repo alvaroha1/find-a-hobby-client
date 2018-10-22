@@ -8,8 +8,7 @@ You will need ([Find a Hobby Server]( https://github.com/alvaroha1/find-a-hobby-
 * [Tech Stack](#tech-stack)
 * [Screenshots](#screenshots)
 * [Getting started](#getting-started)
-* [Additional Features](#additional-features)
-* [Author](#author)
+* [Authors](#authors)
 * [License](#license)
 
 ## Motivation
