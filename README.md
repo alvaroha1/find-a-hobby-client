@@ -4,7 +4,6 @@ Contributed in an Open Source project with [Rodrigo Sanchez]( https://github.com
 You will need ([Find a Hobby Server]( https://github.com/alvaroha1/find-a-hobby-server)) as well.
 
 ## Table of contents
-* [Idea](#idea)
 * [Motivation](#motivation)
 * [Tech Stack](#tech-stack)
 * [Screenshots](#screenshots)
@@ -65,6 +64,7 @@ If you want to use a clean local and fast database (recommended for development)
 
 ## Authors
 * Jon Portella - [Github](https://github.com/jportella93) - [LinkedIn](https://www.linkedin.com/in/jonportella/) - [Twitter](https://twitter.com/jportella93)
+* Rodrigo Sanchez [GitHub](https://github.com/RodriFS/) - [Linkedin](https://www.linkedin.com/in/rodrigo-f-sanchez/)
 * Alvaro Hernandez Assens [GitHub](https://github.com/alvaroha1) - [Linkedin](https://www.linkedin.com/in/alvaroha/)
 
 ## License
