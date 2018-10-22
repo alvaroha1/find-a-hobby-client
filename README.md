@@ -3,6 +3,16 @@
 Contributed in an Open Source project with [Rodrigo Sanchez]( https://github.com/RodriFS/).
 You will need ([Find a Hobby Server]( https://github.com/alvaroha1/find-a-hobby-server)) as well.
 
+## Table of contents
+* [Idea](#idea)
+* [Motivation](#motivation)
+* [Tech Stack](#tech-stack)
+* [Screenshots](#screenshots)
+* [Getting started](#getting-started)
+* [Additional Features](#additional-features)
+* [Author](#author)
+* [License](#license)
+
 ## Motivation
 We decided to remade the whole look of the application and focus on improving the user experience.
 The main objective of this project was to take an already existing project and continue working on it.
@@ -53,11 +63,9 @@ If you want to use a clean local and fast database (recommended for development)
 1. start development server following instructions of https://github.com/alvaroha1/find-a-hobby-server
 2. In /src/lib/apiClient.js, change the variable URL to point to your IP address followed by the port where you are runnning the server. For example: const URL = 'http://192.168.1.191:3000'
 
-## Original Author
-
-Jon Portella - [Github](https://github.com/jportella93) - [LinkedIn](https://www.linkedin.com/in/jonportella/) - [Twitter](https://twitter.com/jportella93)
-
+## Authors
+* Jon Portella - [Github](https://github.com/jportella93) - [LinkedIn](https://www.linkedin.com/in/jonportella/) - [Twitter](https://twitter.com/jportella93)
+* Alvaro Hernandez Assens [GitHub](https://github.com/alvaroha1) - [Linkedin](https://www.linkedin.com/in/alvaroha/)
 
 ## License
-
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/marcoantonioghiani01/xest-client/blob/master/LICENSE) file for details
