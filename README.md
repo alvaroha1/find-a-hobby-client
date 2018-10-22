@@ -27,9 +27,9 @@ The original Find-A-Hobby was a great fit for us as a team because we both like 
 * [Font Awesome](https://fontawesome.com/) - Icons library. Used for the football ball, dollar sign and ballon icons.
 
 ### 2.0
-* SASS
-* Unsplash API
-* Redux
+* [Sass](https://sass-lang.com/) - Sass is an awesome css preprocessor.
+* [Redux](https://redux.js.org/) - Redux is a predictable state container for JavaScript apps.
+* [Unsplash](https://unsplash.com/) - Unsplash API for finding photos
 
 ## Screenshots
 ![login](https://github.com/alvaroha1/find-a-hobby-client/blob/master/assets/sc0.png)
