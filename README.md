@@ -1,5 +1,4 @@
 # Find-a-Hobby 2.0
-
 Contributed in an Open Source project with [Rodrigo Sanchez]( https://github.com/RodriFS/).
 You will need ([Find a Hobby Server]( https://github.com/alvaroha1/find-a-hobby-server)) as well.
 
@@ -17,7 +16,6 @@ The main objective of this project was to take an already existing project and c
 The original Find-A-Hobby was a great fit for us as a team because we both like the original idea but at the same time we thought we could take it to a whole new level.
 
 ## Tech Stack
-
 ### 1.0
 * [React](https://github.com/facebook/react) - Front end library for building user interfaces
 * [Bootstrap](https://github.com/twbs/bootstrap) - Framework for UI elements.
@@ -35,7 +33,6 @@ The original Find-A-Hobby was a great fit for us as a team because we both like 
 ![select a picture](https://github.com/alvaroha1/find-a-hobby-client/blob/master/assets/sc2.png)
 
 ## Getting started
-
 1. Clone the repo
 
 ```
